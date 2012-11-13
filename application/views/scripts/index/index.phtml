@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IMEC. | Home</title>
+		<link rel="shortcut icon" href="img/icono.png"/>
+		<!-- Styles -->
+			<?php echo $this->partial("partials/all-styles.phtml") ?>
+		<!-- Styles -->
+	</head>
+	<body>
+		<div id="encabezado">
+			<?php echo $this->partial("partials/top-bar.phtml") ?>
+		</div>
+		<div id="contenido">
+			<div class="container">
+				<div class="container-fluid">
+				<div class="row-fluid">
+					<?php echo $this->partial("partials/menu-lat.phtml") ?>
+					<div class="span9">
+						
+						<h1>IntraNet IMEC</h1>
+						<p class="text-info">Sistema para control de Estudiantes.</p>
+						<div class="alert alert-block fade in">
+						  <a class="close" data-dismiss="alert">×</a>
+						  <h4 class="alert-heading">Atencion!</h4>
+							Recuerda que debes Registrar tu entrada y Salida de horas laborales en el Sistema!!!
+						</div>
+						
+
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<!-- all scripts -->
+			<?php echo $this->partial("partials/all-scripts.phtml") ?>
+		<!-- all scripts -->
+	</body>
+</html>

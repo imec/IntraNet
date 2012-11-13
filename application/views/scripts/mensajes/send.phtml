@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IMEC. | Mensajes</title>
+		<link rel="shortcut icon" href="img/icono.png"/>
+		<!-- Styles -->
+			<?php echo $this->partial("partials/all-styles.phtml") ?>
+		<!-- Styles -->
+	</head>
+	<body>
+		<div id="encabezado">
+			<?php echo $this->partial("partials/top-bar.phtml") ?>
+		</div>
+		<div id="contenido">
+			<div class="container">
+				<div class="container-fluid">
+				<div class="row-fluid">
+					<?php echo $this->partial("partials/menu-lat.phtml") ?>
+					<div class="span9">
+						<h1>Mensajes > Victor Arata Jiménez</h1>
+						<p class="text-info">Conversación</p>
+				
+						<div style="text-align:right;">
+							<a type="button" class="btn btn-primary"  href="<?php echo $this->baseUrl()?>/mensajes/">Volver a mensajes</a>
+							
+						</div>
+						<br>
+						<form class="form-horizontal" >
+							<textarea style="width:100%;" rows="2"></textarea>
+							<button type="submit" class="btn btn-success">Enviar</button>
+						</form>
+						<div class="msjChat" >
+							<img src="http://placehold.it/140x140" class="img-rounded" style="max-width: 56px;float: left;margin-right: 13px;">
+							<h4 style="margin-right: 13px;">Victor Araya Jiménez</h4>
+							<p class="text-info">hola a fasf as afsfasfasdasfgfadsfasfasfsafasfasfasfasfsafasfsaf as</p>
+						</div>
+						<div class="msjChat" >
+							<img src="http://placehold.it/140x140" class="img-rounded" style="max-width: 56px;float: left;margin-right: 13px;">
+							<h4 style="margin-right: 13px;">Victor Araya Jiménez</h4>
+							<p class="text-info">hola a fasf as afssafasfasfasf as</p>
+						</div>
+						<div class="msjChat" >
+							<img src="http://placehold.it/140x140" class="img-rounded" style="max-width: 56px;float: left;margin-right: 13px;">
+							<h4 style="margin-right: 13px;">Victor Araya Jiménez</h4>
+							<p class="text-info">hola a fasf as afsfasf as</p>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<!-- all scripts -->
+			<?php echo $this->partial("partials/all-scripts.phtml") ?>
+		<!-- all scripts -->
+	</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IMEC. | Agegar Curso</title>
+		<link rel="shortcut icon" href="img/icono.png"/>
+		<!-- Styles -->
+			<?php echo $this->partial("partials/all-styles.phtml") ?>
+		<!-- Styles -->
+	</head>
+	<body>
+		<div id="encabezado">
+			<?php echo $this->partial("partials/top-bar.phtml") ?>
+		</div>
+		<div id="contenido">
+			<div class="container">
+				<div class="container-fluid">
+				<div class="row-fluid">
+					<?php echo $this->partial("partials/menu-lat.phtml") ?>
+					<div class="span9">
+						<h1>Registrar Salida de Dinero</h1>
+						<p class="text-info">Completa el siguiente formulario para ingresar la salida</p>
+						
+						
+						<form class="form-horizontal" action="<?php echo $this->baseUrl()?>/salidas/result" method="POST">
+							<fieldset>
+							  <br><br>
+							 	<div class="control-group">
+									<label class="control-label" for="curso">Cuenta: </label>
+									<div class="controls">
+									 <select class="span5" id="curso">
+										<option>- -  Seleccione una cuenta - - </option>
+										<option>Salarios</option>
+										<option>Otros Gastos</option>
+										<option>Costos Fijos</option>
+										<option>Publicidad</option>
+									  </select>
+									  <span class="help-inline"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="curso">Detalle: </label>
+									<div class="controls">
+									 <select class="span5" id="curso">
+										<option>Alquiler </option>
+										<option>Luz</option>
+										<option>Telefono</option>
+										<option>Salario Juan Rafael</option>
+										<option>Salario Victor Araya</option>
+										<option>Gastos de Limpieza</option>
+										<option>Volantes</option>
+									  </select>
+									  <span class="help-inline"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="comentario">Descripcion: </label>
+									<div class="controls">
+										<textarea class="input-xlarge" id="comentario" rows="3"></textarea>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="appendedPrependedInput2">Monto a pagar:</label>
+									<div class="controls">
+										<div class="input-prepend input-append">
+											<span class="add-on">¢</span><input name="abono" class="span7" id="appendedPrependedInput2" size="16" type="text"><span class="add-on">.00</span>
+										</div>
+									</div>
+								</div>
+								<div class="form-actions">
+									<button type="submit" class="btn btn-primary">Ingresar Salida</button>
+								</div>
+							</fieldset>
+						</form>
+
+
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<!-- all scripts -->
+			<?php echo $this->partial("partials/all-scripts.phtml") ?>
+		<!-- all scripts -->
+	</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IMEC. | Mensajes</title>
+		<link rel="shortcut icon" href="img/icono.png"/>
+		<!-- Styles -->
+			<?php echo $this->partial("partials/all-styles.phtml") ?>
+		<!-- Styles -->
+	</head>
+	<body>
+		<div id="encabezado">
+			<?php echo $this->partial("partials/top-bar.phtml") ?>
+		</div>
+		<div id="contenido">
+			<div class="container">
+				<div class="container-fluid">
+				<div class="row-fluid">
+					<?php echo $this->partial("partials/menu-lat.phtml") ?>
+					<div class="span9">
+						<h1>Sistema de Mensajeria !!!</h1>
+						<p class="text-info">Conectate con los demas usuarios a travez de esta aplicacion.</p>
+						<br>
+						<div style="text-align:right;">
+							<a type="button" class="btn btn-primary" data-toggle="modal" href="#newMsj">Nuevo Mensaje</a>
+							<div id="newMsj" class="modal hide fade in" style="display: none;text-align:left; ">					
+							  <div class="modal-header">
+								<a class="close" data-dismiss="modal">×</a>
+								<h3>Busca el Usuario:</h3>
+							  </div>
+								
+								<form method="post" class="form-horizontal">
+									<div class="modal-body">
+										
+										
+										<input type="text" name="termino-search" class="span6" placeholder="Digite el nombre del usuario"/>
+										<br><br>
+										<div>
+											<div class="caja1">
+												<img src="http://placehold.it/140x140" class="img-rounded" style="max-width: 40px;float: left;margin-right: 13px;">
+												<h4 style="float: left;margin-right: 13px;">Victor Araya Jiménez</h4>
+												<a href="<?php echo $this->baseUrl()?>/mensajes/send?id=78628173" type="submit" class="btn btn-primary" style="    float: right;">Empezar conversación</a>
+											</div>
+											<div class="caja1">
+												<img src="http://placehold.it/140x140" class="img-rounded" style="max-width: 40px;float: left;margin-right: 13px;">
+												<h4 style="float: left;margin-right: 13px;">Victor Araya Jiménez</h4>
+												<a href="<?php echo $this->baseUrl()?>/mensajes/send?id=78628173" type="submit" class="btn btn-primary" style="    float: right;">Empezar conversación</a>
+											</div>
+											
+											<div class="caja1">
+												<img src="http://placehold.it/140x140" class="img-rounded" style="max-width: 40px;float: left;margin-right: 13px;">
+												<h4 style="float: left;margin-right: 13px;">Victor Araya Jiménez</h4>
+												<a href="<?php echo $this->baseUrl()?>/mensajes/send?id=78628173" type="submit" class="btn btn-primary" style="    float: right;">Empezar conversación</a>
+											</div>
+										</div>
+									</div>
+									<div class="modal-footer">
+										<a href="#" class="btn" data-dismiss="modal">Cancelar</a>
+									</div>
+								</form>
+							</div>
+
+						</div>
+						<br>
+						<div class="msjChat" >
+							<a href="<?php echo $this->baseUrl()?>/mensajes/send?id=78628173">
+								<img src="http://placehold.it/140x140" class="img-rounded" style="max-width: 56px;float: left;margin-right: 13px;">
+								<h4 style="margin-right: 13px;">Victor Araya Jiménez</h4>
+								<p class="text-info">hola a fasf as afsfasfasdasfgfadsfasfasfsafasfasfasfasfsafasfsaf as</p>
+							</a>
+						</div>
+						<div class="msjChat" >
+							<a href="<?php echo $this->baseUrl()?>/mensajes/send?id=78628173">
+								<img src="http://placehold.it/140x140" class="img-rounded" style="max-width: 56px;float: left;margin-right: 13px;">
+								<h4 style="margin-right: 13px;">Juan Araya</h4>
+								<p class="text-info">hola a fasf as afsfasfasdasfgfadsfasfasfsafasfasfasfasfsafasfsaf as</p>
+							</a>
+						</div>
+						<div class="msjChat" >
+							<a href="<?php echo $this->baseUrl()?>/mensajes/send?id=78628173">
+								<img src="http://placehold.it/140x140" class="img-rounded" style="max-width: 56px;float: left;margin-right: 13px;">
+								<h4 style="margin-right: 13px;">Ismael Artavia</h4>
+								<p class="text-info">hola a fasf as afsfasfasdasfgfadsfasfasfsafasfasfasfasfsafasfsaf as</p>
+							</a>
+						</div>
+						<div class="msjChat" >
+							<a href="<?php echo $this->baseUrl()?>/mensajes/send?id=78628173">
+								<img src="http://placehold.it/140x140" class="img-rounded" style="max-width: 56px;float: left;margin-right: 13px;">
+								<h4 style="margin-right: 13px;">Diana Ramirez</h4>
+								<p class="text-info">hola a fasf as afsfasfasdasfgfadsfasfasfsafasfasfasfasfsafasfsaf as</p>
+							</a>
+						</div>
+						
+						<div class="well" style="text-align:center;">
+							<p class="text-info">No hay conversaciones para mostrar</p>
+						</div>
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<!-- all scripts -->
+			<?php echo $this->partial("partials/all-scripts.phtml") ?>
+		<!-- all scripts -->
+	</body>
+</html>

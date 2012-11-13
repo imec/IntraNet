@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IMEC. | Matricualr</title>
+		<link rel="shortcut icon" href="img/icono.png"/>
+		<!-- Styles -->
+			<?php echo $this->partial("partials/all-styles.phtml") ?>
+		<!-- Styles -->
+	</head>
+	<body>
+		<div id="encabezado">
+			<?php echo $this->partial("partials/top-bar.phtml") ?>
+		</div>
+		<div id="contenido">
+			<div class="container">
+				<div class="container-fluid">
+				<div class="row-fluid">
+					<?php echo $this->partial("partials/menu-lat.phtml") ?>
+					<div class="span9">
+						<h1>Matricular Nuevo Curso</h1>
+						<p class="text-info">Estudiante: Victor Araya Jimpenez</p>
+						<br>
+						
+						<form class="form-horizontal" action="<?php echo $this->baseUrl()?>/matricular/result" method="POST">
+							<fieldset>
+							  <h3>Completa la siguiente información</h3><br>
+								
+								<div class="control-group">
+									<label class="control-label" for="curso">Curso: </label>
+									<div class="controls">
+									 <select class="span5" id="curso">
+										<option>- -  Seleccione un Curso - - </option>
+										<option>Operador en Sistemas Informáticos</option>
+										<option>Técnico Operador en Sistemas Informáticos</option>
+										<option>Mantenimiento y Reparación</option>
+										<option>Excel Avanzado VBA</option>
+										<option>Diseño de Paginas Web</option>
+									  </select>
+									  <span class="help-inline"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="modulos">Modulos: </label>
+									<div class="controls">
+										<label class="checkbox">
+											<input type="checkbox" name="optionsCheckboxList1" value="option1">
+											Windows 7
+										</label>
+										<label class="checkbox">
+											<input type="checkbox" name="optionsCheckboxList2" value="option2">
+											MS Office Word 2010
+										</label>
+										<label class="checkbox">
+											<input type="checkbox" name="optionsCheckboxList3" value="option3">
+											MS Office Excel 2010
+										</label>
+										<label class="checkbox">
+											<input type="checkbox" name="optionsCheckboxList4" value="option3">
+											MS Office PP 2010
+										</label>
+										<label class="checkbox">
+											<input type="checkbox" name="optionsCheckboxList5" value="option3">
+											MS Office Publisher 2010
+										</label>
+										<span class="help-inline"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="curso">Día: </label>
+									<div class="controls">
+									 <select class="span5" id="dia">
+										<option>- -  Seleccione un Día - - </option>
+										<option>Lunes</option>
+										<option>Martes</option>
+										<option>Miercoles</option>
+										<option>Jueves</option>
+										<option>Viernes</option>
+										<option>Sábado</option>
+										<option>Domingo</option>
+									  </select>
+									  <span class="help-inline"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="horario">Horario: </label>
+									<div class="controls">
+									 <select class="span5" id="horario">
+										<option>- -  Seleccione un horario - - </option>
+										<option>Martes 8 a 11</option>
+										<option>Martes 11 a 2</option>
+										<option>Martes 2 a 5</option>
+										<option>Marttes 6 a 9</option>
+									  </select>
+									  <span class="help-inline"></span>
+									</div>
+								</div>
+								<div class="control-group">
+									<table class="bordered" >
+										<tr>
+											<th colspan="4" style="text-align: center;">Seleccione un Grupo</th>
+										</tr>
+										<tr>
+											<th>Acción</th>
+											<th>Curso</th>
+											<th>Profesor</th>
+											<th>Fecha Inicio</th>
+										</tr>
+										<div class="controls">
+											<tr>
+												<td>
+													<label class="radio">
+														<input type="radio" name="optionsRadios" id="optionsRadios1" value="" >
+														Seleccionar
+													</label>
+												</td>
+												<td>OSI</td>
+												<td>Juan Araya</td>
+												<td>16 feb 2010</td>
+											</tr>
+											<tr>
+												<td>
+													<label class="radio">
+														<input type="radio" name="optionsRadios" id="optionsRadios2" value="" >
+														Seleccionar
+													</label>
+												</td>
+												<td>OSI</td>
+												<td>Ismael Artavia</td>
+												<td>25 enero 2010</td>
+											</tr>
+										</div>
+									</table>
+								</div>	
+								<div class="control-group">
+									<label class="control-label" for="user">Precio del Curso: </label>
+									<div class="controls">
+										<div class="input-prepend">
+											<span class="add-on">¢</span><input class="span9" id="prependedInput" size="16" type="text">
+										</div>
+										<div class="input-prepend">
+											<span class="add-on">%</span><input placeholder="Su descuento"  class="span9" id="prependedInput" size="16" type="text">
+										</div>
+										<div class="input-prepend">
+											<span class="add-on">¢</span><input placeholder="Su precio"  class="span9" id="prependedInput" size="16" type="text">
+										</div>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="direc">Fecha pago Matricula: </label>
+									<div class="controls">  
+										<div class="input-append date" id="dp1" data-date="10-27-2012" data-date-format="dd-mm-yyyy">
+													<input class="span9" size="16" type="text" value="10-27-2012" readonly="" >
+													<span class="add-on"><i class="icon-calendar"></i></span>
+												 </div>
+									</div>	 
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="direc">Fecha pago Mensualidad: </label>
+									<div class="controls">  
+										<div class="input-append date" id="dp2" data-date="10-27-2012" data-date-format="dd-mm-yyyy">
+													<input class="span9" size="16" type="text" value="10-27-2012" readonly="" >
+													<span class="add-on"><i class="icon-calendar"></i></span>
+												 </div>
+									</div>	 
+								</div>
+								<div class="form-actions">
+									<button type="submit" class="btn btn-primary">Matricular Curso</button>
+								</div>
+							</fieldset>
+						</form>
+
+
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<!-- all scripts -->
+			<?php echo $this->partial("partials/all-scripts.phtml") ?>
+		<!-- all scripts -->
+	</body>
+</html>

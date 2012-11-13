@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IMEC. | Facturación</title>
+		<link rel="shortcut icon" href="img/icono.png"/>
+		<!-- Styles -->
+			<?php echo $this->partial("partials/all-styles.phtml") ?>
+		<!-- Styles -->
+	</head>
+	<body>
+		<div id="encabezado">
+			<?php echo $this->partial("partials/top-bar.phtml") ?>
+		</div>
+		<div id="contenido">
+			<div class="container">
+				<div class="container-fluid">
+				<div class="row-fluid">
+				<?php echo $this->partial("partials/menu-lat.phtml") ?>
+					<div class="span9">
+						<h1>Pagar Factura #456</h1>
+						<p class="text-info">Victor Araya Jiménez Cod# 546</p>
+						
+						<br>
+						<h3>Historial de Abonos a esta factura</h3>
+						<br>		
+						<table class="bordered" >
+							<tr>
+								<th># Abono.</th>
+								<th>Nombre</th>
+								<th>Fecha Abono</th>
+								<th>Monto</th>
+								<th>Accion</th>
+							</tr>
+
+							<tr>
+								<td>65469</td>
+								<td>Victor Araya</td>
+								<td>15/5/2012</td>
+								<td>¢5000</td>
+								<td ><a href="<?php echo $this->baseUrl()?>/facturar/result?id=78628173"><i class="icon-zoom-in"> </i> Ver recibo</a></td>
+							</tr>
+							<tr>
+								<td>65469</td>
+								<td>Victor Araya</td>
+								<td>15/4/2012</td>
+								<td>¢15000</td>
+								<td ><a href="<?php echo $this->baseUrl()?>/facturar/result?id=78628173"><i class="icon-zoom-in"> </i> Ver recibo</a></td>
+							</tr>
+						</table>
+						<br>
+						<div class="well">
+						<form class="form-horizontal" action="<?php echo $this->baseUrl()?>/facturar/result" method="GET">
+							<fieldset>
+								<h3>Pagar Factura #456	- Victor Araya Jiménez Cod# 546</h3>
+								<br>
+								<div class="control-group">
+									<label class="control-label" for="appendedPrependedInput">Saldo Actual:</label>
+									<div class="controls">
+										<div class="input-prepend input-append">
+											<span class="add-on">¢</span><input name="saldo" value="6000" class="span7" readonly="readonly" 	id="appendedPrependedInput" size="16" type="text"><span class="add-on">.00</span>
+										</div>
+									</div>
+								</div>
+								<div class="control-group">
+									<label class="control-label" for="appendedPrependedInput2">Monto a pagar:</label>
+									<div class="controls">
+										<div class="input-prepend input-append">
+											<span class="add-on">¢</span><input name="abono" class="span7" id="appendedPrependedInput2" size="16" type="text"><span class="add-on">.00</span>
+										</div>
+									</div>
+								</div>
+								<div class="form-actions">
+									<a href="#confirm456" data-toggle="modal" class="btn btn-primary" >Efectuar Pago</a>
+									<div id="confirm456" class="modal hide fade in" style="display: none; ">					
+										<div class="modal-header">
+											<a class="close" data-dismiss="modal">×</a>
+											<h3>¿Esta seguro que desea efectuar el pago?</h3>
+										</div>
+										<div class="modal-footer">
+											<a href="#" class="btn" data-dismiss="modal">Cancelar</a>
+											<button type="submit" class="btn btn-primary">Continuar</button>
+										</div>
+										
+									</div>
+								</div>
+							</fieldset>
+						</form>	
+					</div>						
+					</div>
+					
+					
+				</div>
+				</div>
+			</div>
+		</div>
+		<!-- all scripts -->
+			<?php echo $this->partial("partials/all-scripts.phtml") ?>
+		<!-- all scripts -->
+	</body>
+</html>

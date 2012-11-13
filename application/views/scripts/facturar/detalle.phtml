@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IMEC. | Facturación</title>
+		<link rel="shortcut icon" href="img/icono.png"/>
+		<!-- Styles -->
+			<?php echo $this->partial("partials/all-styles.phtml") ?>
+		<!-- Styles -->
+	</head>
+	<body>
+		<div id="encabezado">
+			<?php echo $this->partial("partials/top-bar.phtml") ?>
+		</div>
+		<div id="contenido">
+			<div class="container">
+				<div class="container-fluid">
+				<div class="row-fluid">
+					<?php echo $this->partial("partials/menu-lat.phtml") ?>
+					<div class="span9">
+						<h1>Detalle Factura - Victor Araya Jiménez</h1>
+						<p class="text-info">Recibos pendientes a la fecha..</p>
+						
+						
+						<br>
+							
+						<div class="">
+							
+							<br>
+							<table class="bordered" >
+								<tr>
+									<th>#</th>
+									<th>Fecha Establecida</th>
+									<th>Cliente</th>
+									<th>Detalle</th>
+									<th>¢ Monto</th>
+									<th>Tramitar</th>
+								</tr>
+
+								<tr>
+									<td colspan="6" class="letraVerde">No has matriculado Ningun Curso</td>
+								</tr>
+							</table>
+							<br>
+							
+							<br><br>
+						</div>
+						
+						<div class="">
+							<h4 class="alert-heading">Curso Tecnico en Sistemas Informáticos</h4>
+							<br>
+							<table class="bordered" >
+								<tr>
+									<th>#</th>
+									<th>Fecha Establecida</th>
+									<th>Cliente</th>
+									<th>Detalle</th>
+									<th>¢ Monto Pend</th>
+									<th>Acción</th>
+								</tr>
+
+								<tr class="letraRoja">
+									<td>456</td>
+									<td>16 May 2013</td>
+									<td>Victor Araya</td>
+									<td>Mensualidad</td>
+									<td>¢24000</td>
+									<td ><a href="<?php echo $this->baseUrl()?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
+											
+								</tr>
+								
+								
+								<tr class="letraRoja">
+									<td>457</td>
+									<td>16 Abr 2013</td>
+									<td>Victor Araya</td>
+									<td>Mensualidad</td>
+									<td>¢5000</td>
+									<td ><a  href="<?php echo $this->baseUrl()?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
+								</tr>
+								<tr class="letraAmarilla">
+									<td>458</td>
+									<td>16 Abr 2013</td>
+									<td>Victor Araya</td>
+									<td>Mensualidad</td>
+									<td>¢5000</td>
+									<td ><a href="<?php echo $this->baseUrl()?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
+								</tr>
+								<tr class="letraAmarilla">
+									<td>459</td>
+									<td>16 Abr 2013</td>
+									<td>Victor Araya</td>
+									<td>Mensualidad</td>
+									<td>¢8000</td>
+									<td ><a href="<?php echo $this->baseUrl()?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
+								</tr>
+								<tr class="letraVerde">
+									<td>460</td>
+									<td>16 Abr 2013</td>
+									<td>Victor Araya</td>
+									<td>Mensualidad</td>
+									<td>¢0</td>
+									<td ><a href="<?php echo $this->baseUrl()?>/facturar/historial?id=78628173"><i class="icon-check"> </i> Ver Historial</a></td>
+								</tr>
+								<tr class="letraVerde">
+									<td>461</td>
+									<td>16 Abr 2013</td>
+									<td>Victor Araya</td>
+									<td>Mensualidad</td>
+									<td>¢0</td>
+									<td ><a href="<?php echo $this->baseUrl()?>/facturar/historial?id=78628173"><i class="icon-check"> </i> Ver Historial</a></td>
+								</tr>
+							</table>
+							<br>
+							<br><br>
+						</div>
+					</div>
+					
+					
+				</div>
+				</div>
+			</div>
+		</div>
+		<!-- all scripts -->
+			<?php echo $this->partial("partials/all-scripts.phtml") ?>
+		<!-- all scripts -->
+	</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IMEC. | Facturación</title>
+		<link rel="shortcut icon" href="img/icono.png"/>
+		<!-- Styles -->
+			<?php echo $this->partial("partials/all-styles.phtml") ?>
+		<!-- Styles -->
+	</head>
+	<body>
+		<div id="encabezado">
+			<?php echo $this->partial("partials/top-bar.phtml") ?>
+		</div>
+		<div id="contenido">
+			<div class="container">
+				<div class="container-fluid">
+				<div class="row-fluid">
+					<?php echo $this->partial("partials/menu-lat.phtml") ?>
+					<div class="span9">
+						<h1>Consulta de Entradas y Salidas !!!</h1>
+						<p class="text-info">Rango de fechas..</p>
+						<br>
+						<h3><i class="icon-calendar"></i> De: 16/2/2010 hasta: 16/3/2012</h3><br>
+						
+						<table class="bordered">
+							<tr>
+								<th>Fecha</th>
+								<th>Fact #</th>
+								<th>Nombre - Cuenta</th>
+								<th>Descripción</th>
+								<th>Entrada</th>
+								<th>Salidad</th>
+							</tr>
+							<tr>
+								<td>16/2/2012</td>
+								<td>456</td>
+								<td>Victor Araya Jiménez</td>
+								<td>Abono a la Factura #244324</td>
+								<td>¢6000</td>
+								<td>¢0</td>
+							</tr>
+							<tr>
+								<td>16/2/2012</td>
+								<td>456</td>
+								<td>Victor Araya Jiménez</td>
+								<td>Abono a la Factura #244324</td>
+								<td>¢6000</td>
+								<td>¢0</td>
+							</tr>
+							<tr>
+								<td>16/2/2012</td>
+								<td>456</td>
+								<td>Otros Gastos</td>
+								<td>Pago Amnet Fact #534</td>
+								<td>¢0</td>
+								<td>¢25000</td>
+							</tr>
+							<tr>
+								<td>16/2/2012</td>
+								<td>456</td>
+								<td>Victor Araya Jiménez</td>
+								<td>Abono a la Factura #244324</td>
+								<td>¢6000</td>
+								<td>¢0</td>
+							</tr>
+							<tr>
+								<td>16/2/2012</td>
+								<td>456</td>
+								<td>Victor Araya Jiménez</td>
+								<td>Abono a la Factura #244324</td>
+								<td>¢6000</td>
+								<td>¢0</td>
+							</tr>
+							<tr>
+								<td>16/2/2012</td>
+								<td>456</td>
+								<td>Otros Gastos</td>
+								<td>Pago telefono Fact #534</td>
+								<td>¢0</td>
+								<td>¢35000</td>
+							</tr>
+							<tr>
+								<td>16/2/2012</td>
+								<td>456</td>
+								<td>Otros Gastos</td>
+								<td>Pago Luz Fact #534</td>
+								<td>¢0</td>
+								<td>¢45000</td>
+							</tr>
+							
+							
+						</table><br>
+						<div class="well">
+							<form class="form-horizontal" action="recibo.php" method="GET">
+								<fieldset>
+									<h4>Reporte de Saldos:</h4><br>
+									<div class="control-group">
+										<label class="control-label" for="appendedPrependedInput">Total entradas:</label>
+										<div class="controls">
+											<div class="input-prepend input-append">
+												<span class="add-on">¢</span><input name="saldo" value="356000" class="span6" readonly="readonly" id="appendedPrependedInput" size="16" type="text"><span class="add-on">.00</span>
+											</div>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="appendedPrependedInput">Total salidas:</label>
+										<div class="controls">
+											<div class="input-prepend input-append">
+												<span class="add-on">¢</span><input name="saldo" value="250000" class="span6" readonly="readonly" id="appendedPrependedInput" size="16" type="text"><span class="add-on">.00</span>
+											</div>
+										</div>
+									</div>
+									<div class="control-group">
+										<label class="control-label" for="appendedPrependedInput">Saldo:</label>
+										<div class="controls">
+											<div class="input-prepend input-append">
+												<span class="add-on">¢</span><input name="saldo" value="106000" class="span6" readonly="readonly" id="appendedPrependedInput" size="16" type="text"><span class="add-on">.00</span>
+											</div>
+										</div>
+									</div>
+								</fieldset>
+							</form>	
+						</div>
+						
+					</div>
+					
+					
+				</div>
+				</div>
+			</div>
+		</div>
+		<!-- all scripts -->
+			<?php echo $this->partial("partials/all-scripts.phtml") ?>
+		<!-- all scripts -->
+	</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IMEC. | Saldos</title>
+		<link rel="shortcut icon" href="img/icono.png"/>
+		<!-- Styles -->
+			<?php echo $this->partial("partials/all-styles.phtml") ?>
+		<!-- Styles -->
+	</head>
+	<body>
+		<div id="encabezado">
+			<?php echo $this->partial("partials/top-bar.phtml") ?>
+		</div>
+		<div id="contenido">
+			<div class="container">
+				<div class="container-fluid">
+				<div class="row-fluid">
+					<?php echo $this->partial("partials/menu-lat.phtml") ?>
+					<div class="span9">
+						<h1>Consulta de Entradas y Salidas !!!</h1>
+						<p class="text-info">Filtra la información para una busqueda mas especifica.</p>
+						<br>
+						
+						<ul id="miTab">
+							  <li><a href="#" name="#tab1">Rango de Fechas</a></li>
+							  <li><a href="#" name="#tab2">Mes específico</a></li>
+						</ul>
+
+						<div id="miTabContent">
+							<div id="tab1">
+								<form class="form-horizontal" action="<?php echo $this->baseUrl()?>/saldos/result" method="POST">
+									<fieldset>
+										<h3>Filtra por rango de fechas:</h3>
+										<br>
+										<div class="control-group">
+											<label class="control-label" for="nombreCompleto">Fecha Inicial: </label>
+											<div class="controls">  
+												<div class="input-append date" id="dp1" data-date="10-27-2012" data-date-format="dd-mm-yyyy">
+													<input class="span9" size="16" type="text" value="10-27-2012" readonly="" >
+													<span class="add-on"><i class="icon-calendar"></i></span>
+												 </div>
+											</div>
+										</div>	
+										<div class="control-group">
+											<label class="control-label" for="nombreCompleto">Fecha Final: </label>
+											<div class="controls">  
+												<div class="input-append date" id="dp2" data-date="10-27-2012" data-date-format="dd-mm-yyyy">
+													<input class="span9" size="16" type="text" value="10-27-2012" readonly="">
+													<span class="add-on"><i class="icon-calendar"></i></span>
+												 </div>
+											</div>
+										</div>	
+										<div class="form-actions">
+											<button type="submit" class="btn btn-primary">Realizar Consulta</button>
+										</div>
+									</fieldset>
+								</form>  
+							</div>
+							<div id="tab2">
+								<form class="form-horizontal" action="<?php echo $this->baseUrl()?>/saldos/result" method="POST">
+									<fieldset>
+										<h3>Filtra por mes específico:</h3>
+										<br>
+										<div class="control-group">
+											<label class="control-label" for="nombreCompleto">Mes: </label>
+											<div class="controls">  
+												<div class="input-append date" id="dpMonths" data-date="102/2012" data-date-format="mm/yyyy" data-date-viewmode="years" data-date-minviewmode="months">
+													<input class="span9" size="16" type="text" value="02/2012" readonly="">
+													<span class="add-on"><i class="icon-calendar"></i></span>
+												 </div>
+											</div>	 
+										</div>	
+										<div class="form-actions">
+											<button type="submit" class="btn btn-primary">Realizar Consulta</button>
+										</div>
+									</fieldset>
+								</form>
+							</div>
+						</div>
+					</div>
+					
+					
+				</div>
+				</div>
+			</div>
+		</div>
+		<!-- all scripts -->
+			<?php echo $this->partial("partials/all-scripts.phtml") ?>
+		<!-- all scripts -->
+	</body>
+</html>

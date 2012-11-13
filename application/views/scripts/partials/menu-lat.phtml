@@ -1,0 +1,78 @@
+<div class="span3">
+	<div style="padding: 17px 11px;" class="well">
+		<img class="img-perfil" src="<?php echo $this->baseUrl()?>/img/perfil.jpg" />
+	</div>
+	<div style="padding: 8px 0;" class="well">
+		<ul class="nav nav-list">
+		
+			<!--  MENU PARA USUARIOS ADMINISTRATIVOS   -->	
+				<li class="nav-header">Administrativo</li>
+				<li><a href="<?php echo $this->baseUrl()?>/facturar/search"><i class="icon-list-alt"></i> Facturar</a></li>
+				<li><a href="<?php echo $this->baseUrl()?>/matricular/search"><i class="icon-plus-sign"></i> Matricular</a></li>
+				<li><a href="<?php echo $this->baseUrl()?>/estudiantes/search"><i class="icon-zoom-in"></i> Consultar Estudiantes</a></li>
+
+				<li class="divider"></li>
+				<li><a href="<?php echo $this->baseUrl()?>/registro/"><i class="icon-user"></i> Registrar Usuario</a></li>
+				<li><a href="<?php echo $this->baseUrl()?>/agregar/"><i class="icon-file"></i> Agregar</a></li>
+				
+			<!-- MENU PARA USUARIOS ESTUDIANTES
+				<li class="nav-header">Victor Araya</li>
+				<li><a href="#"><i class="icon-book"></i> Cursos</a></li>
+				<li><a href="#"><i class="icon-shopping-cart"></i> Mis Pagos</a></li>
+			-->
+			
+			<!--  MENU PARA USUARIOS PROFESORES  
+				<li class="nav-header">Profesores</li>
+				<li ><a href="#"><i class="icon-th-large"></i> Mis grupos</a></li>
+				<li ><a href="#"><i class="icon-pencil"></i> Notas y Asistencia</a></li>
+				<li ><a href="#"><i class="icon-inbox"></i> Mi Biblioteca</a></li>
+			-->	
+			 
+			<!--  MENU PARA SUPER USUARIOS   -->
+				<li class="nav-header">Finanzas</li>
+				<li><a href="<?php echo $this->baseUrl()?>/saldos/consultar"><i class="icon-th-list"></i> Consultar Saldos</a></li>
+				<li><a href="<?php echo $this->baseUrl()?>/salidas/registrar"><i class="icon-download-alt"></i> Registrar Salida</a></li>
+			
+			<!--  MENU PARA TODOS LOS USUARIOS   -->	
+				<li class="nav-header">General</li>
+				<li><a data-toggle="modal" href="#myModal"><i class="icon-flag"></i> Contactar Gerencia</a></li>
+		</ul>
+	</div>
+</div>
+
+<div id="myModal" class="modal hide fade in" style="display: none; ">					
+	<div class="modal-header">
+		<a class="close" data-dismiss="modal">×</a>
+		<h3>Envia tu mensaje a continuación	</h3>
+	</div>
+	<form method="post" class="form-horizontal">
+		<div class="modal-body">
+			<fieldset>
+				<div class="control-group">
+					<label class="control-label">Tipo de Consulta: </label>
+					<div class="controls docs-input-sizes">
+						<select name="tipoConsulta" class="span5">
+							<option></option>
+							<option>Duda Administrativa</option>
+							<option>Consulta de Estudiante</option>
+							<option>Información Sobre algun Curso</option>
+							<option>Otros</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label">Redacta tu mensaje: </label>
+					<div class="controls docs-input-sizes">
+						<textarea name="consulta"class="input-xlarge" id="textarea" rows="3"></textarea>
+						<p class="help-block">Atenderemos tu consulta lo mas pronto posible. Gracias!</p>
+					</div>
+				</div>
+			</fieldset>
+		</div>
+		<div class="modal-footer">
+			<a href="#" class="btn" data-dismiss="modal">Cerrar</a>
+			<button type="submit" class="btn btn-primary">Enviar Mensaje</button>
+		</div>
+	</form>
+</div>

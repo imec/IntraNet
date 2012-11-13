@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IMEC. | Registro</title>
+		<link rel="shortcut icon" href="img/icono.png"/>
+		<!-- Styles -->
+			<?php echo $this->partial("partials/all-styles.phtml") ?>
+		<!-- Styles -->
+	</head>
+	<body>
+		<div id="encabezado">
+			<?php echo $this->partial("partials/top-bar.phtml") ?>
+		</div>
+		<div id="contenido">
+			<div class="container">
+				<div class="container-fluid">
+				<div class="row-fluid">
+					<?php echo $this->partial("partials/menu-lat.phtml") ?>
+					<div class="span9">
+						<h1>Formulario de Registro !!!</h1>
+						<br>
+							<div class="encabezadoRecibo">
+						<div class="alert alert-success fade in">
+						  <a class="close" data-dismiss="alert">×</a>
+						  <h4 class="alert-heading">En hora Buena!</h4>
+							Victor Araya se ha registrado exitosamente. !!!
+						</div>
+						</div>
+						<div class="miRecibo">
+							<div class="form-actions">
+										<a href="javascript:print()" class="btn btn-primary">Imprimir Registro</a>
+							</div>
+							<div class="bodyRecibo">
+									<div class="seccionCentrada">
+										<p>Instituto IMEC<br>JLC MERCOCARD S.A.<br>Pago de Contado</p>
+									</div>	
+									<div class="seccion">
+										<p>Céd: 3-101-6565496 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   Tel: 2430-4654<br>
+										Doc#: 006548 &nbsp;&nbsp    16 feb 2012 - 11:00 am<br>
+										Facturado por: Diana Ramirez Solano</p>
+									</div>	
+									<div class="divisor">------------------------------------------</div>
+									<div class="seccion">
+										<p>Cliente: Victor Araya Jiménez<br>
+										céd: 206860157 <br>
+										tel: 2442-5189</p>
+									</div>	
+									<div class="divisor">------------------------------------------</div>
+									<div class="seccion">
+										<p>Fact#: 456879<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;Detalle factura:&nbsp; Pago Semanal<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;Saldo Anterior: &nbsp;&nbsp; ¢6000<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;Abono actual: &nbsp;&nbsp;&nbsp; ¢6000<br>
+										&nbsp;&nbsp;&nbsp;&nbsp;Saldo Actual: &nbsp;&nbsp;&nbsp; ¢0<br>
+										</p>
+									</div>	
+									<div class="seccion">
+										<p>Proximo pago: <br>
+										&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;&nbsp;Fact#: 456 por ¢6000 <br>
+										&nbsp;&nbsp;&nbsp;&nbsp;
+										&nbsp;&nbsp;&nbsp;&nbsp;Fecha Limite: 16/2/2012 ***</p>
+									</div>	
+									<div class="seccionCentrada">
+										<p>*** IMEC - Asegura tu Futuro ***<br> *** Gracias!!! ***</p>
+									</div>	
+							
+							</div>	
+						</div>
+
+
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<!-- all scripts -->
+			<?php echo $this->partial("partials/all-scripts.phtml") ?>
+		<!-- all scripts -->
+	</body>
+</html>

@@ -1,0 +1,235 @@
+body{
+background: url("../img/main.jpg") repeat scroll left top transparent;
+font-size: 12px;
+}
+h1 {
+font-size: 31px;
+line-height: 17px;
+}
+h4 {
+font-size: 15px;
+line-height: 20px;
+}
+h3 {
+font-size: 18px;
+line-height: 10px;
+}
+select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"], .uneditable-input {
+font-size: 12px;
+
+}
+.row-fluid .span3 {
+width: 21.404255319148934%;
+}
+.row-fluid .span9 {
+width: 76.46808510638297%;
+}
+
+
+#encabezado img.img-titulo{
+float:left;
+  margin-right:27px;
+  width:208px;
+  }
+  #contenido{
+  
+  margin-top:42px;
+  padding-top:39px;
+  }
+  .container img.img-perfil{
+padding-left:8px;
+  width:151px;
+  
+  border-bottom-left-radius:4px;
+  border-bottom-right-radius:4px;
+  border-top-left-radius:4px;
+  border-top-right-radius:4px;
+
+  }
+  
+  .letraRoja{
+	color:red;
+  }
+    .letraAmarilla{
+	color:#FFBF00;
+  }
+  
+  .letraVerde{
+	color:green;
+  }
+  
+/*ESTILO TABLA PERSOALIZADA*/
+	.bordered{
+	-webkit-box-shadow:#CCCCCC 0 1px 1px;
+	border:1px solid #CCCCCC;
+	border-bottom-left-radius:6px;
+	border-bottom-right-radius:6px;
+	border-top-left-radius:6px;
+	border-top-right-radius:6px;
+	box-shadow:#CCCCCC 0 1px 1px;
+	border-spacing:0;
+	width:100%;
+	}
+
+	.bordered th:first-child {
+	border-bottom-left-radius:0;
+	border-bottom-right-radius:0;
+	border-top-left-radius:6px;
+	border-top-right-radius:0;
+	}
+	.bordered th {
+	-webkit-box-shadow:rgba(255, 255, 255, 0.8) 0 1px 0 inset;
+	background-color:#DCE9F9;
+	background-image:-webkit-linear-gradient(top, #EBF3FC, #DCE9F9);
+	border-top-style:none;
+	box-shadow:rgba(255, 255, 255, 0.8) 0 1px 0 inset;
+	text-shadow:rgba(255, 255, 255, 0.498039) 0 1px 0;
+	}
+	.bordered td {
+	background: white;
+	}
+	.bordered tr:hover td { 
+	 background: #DCE9F9;
+	  -o-transition: all 0.1s ease-in-out;
+	  -webkit-transition: all 0.1s ease-in-out;
+	  -moz-transition: all 0.1s ease-in-out;
+	  -ms-transition: all 0.1s ease-in-out;
+	  transition: all 0.1s ease-in-out;     
+	}
+	
+
+	.bordered td:first-child, .bordered th:first-child {
+	border-left-style:none;
+	}
+	.bordered td, .bordered th {
+	border-left-color:#CCCCCC;
+	border-left-style:solid;
+	border-left-width:1px;
+	border-top-color:#CCCCCC;
+	border-top-style:solid;
+	border-top-width:1px;
+	padding:10px;
+	text-align:left;
+	}
+	
+	.highlight
+	{
+	 
+	} 
+/*ESTILO TABLA PERSOALIZADA*/
+
+
+
+
+
+/*ESTILO PARA LA FACTURA*/
+
+.bodyRecibo{
+width: 233px;
+background: url("../img/logo2.jpg");
+padding: 8px;
+padding-top: 21px;
+}
+.bodyRecibo .seccionCentrada{
+	text-align:center;
+}
+.bodyRecibo .divisor{
+	text-align:center;
+}
+
+/*ESTILO PARA LA FACTURA*/
+
+/************ TABS ****************/
+#miTab {
+	  overflow: hidden;
+	  width: 100%;
+	  margin: 0;
+	  padding: 0;
+	  list-style: none;
+	}
+
+	#miTab li {
+	  float: left;
+	  margin: 0 -15px 0 0;
+	}
+
+	#miTab a {
+	  float: left;
+	  position: relative;
+	  padding: 0 40px;
+	  height: 0;
+	  line-height: 30px;
+	  text-transform: uppercase;
+	  text-decoration: none;
+	  color: #fff;      
+	  border-right: 30px solid transparent;
+	  border-bottom: 30px solid #3D3D3D;
+	  border-bottom-color: #777\9;
+	  opacity: .3;
+	  filter: alpha(opacity=30);      
+	}
+
+	#miTab a:hover,
+	#miTab a:focus {
+	  border-bottom-color: #2ac7e1;
+	  opacity: 1;
+	  filter: alpha(opacity=100);
+	}
+
+	#miTab a:focus {
+	  outline: 0;
+	}
+
+	#miTab #current {
+	  z-index: 3;
+	  border-bottom-color: #3d3d3d;
+	  opacity: 1;
+	  filter: alpha(opacity=100);      
+	}
+
+	/* ----------- */
+	#miTabContent {
+	    background: #fff;
+	    border-top: 2px solid #3d3d3d;
+	    padding: 2em;
+	    /*height: 220px;*/
+	}
+
+	#miTabContent h2,
+	  #miTabContent h3,
+	  #miTabContent p {
+	    margin: 0 0 15px 0;
+	}  
+
+	
+/************ TABS ****************/
+
+
+
+/*CAJAS*/
+
+.caja1{
+background: gainsboro;
+overflow: hidden;
+padding: 5px;
+border-radius: 6px;
+margin-bottom: 11px;
+}
+.msjChat{
+margin-bottom: 8px;
+padding: 5px;
+border-radius: 5px;
+}
+.msjChat:hover{
+background: azure;
+border: 1px solid paleTurquoise;
+}
+.msjChat a{
+color: black;
+text-decoration: none;
+}
+.msjChat:hover a:hover{
+color: black;
+text-decoration: none;
+}
+

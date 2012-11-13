@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>IMEC. | Usuarios</title>
+		<link rel="shortcut icon" href="img/icono.png"/>
+		<!-- Styles -->
+			<?php echo $this->partial("partials/all-styles.phtml") ?>
+		<!-- Styles -->
+		
+	</head>
+	<body>
+		<div id="encabezado">
+			<?php echo $this->partial("partials/top-bar.phtml") ?>
+		</div>
+		<div id="contenido">
+			<div class="container">
+				<div class="container-fluid">
+				<div class="row-fluid">
+					<?php echo $this->partial("partials/menu-lat.phtml") ?>
+					<div class="span9">
+						<h1>Usuarios</h1>
+						<p class="text-info">Busca el Usuario que deseas y realiza el tramite correspondiente.</p>
+						
+						<div  class="alert alert-block fade in">
+						  <a class="close" data-dismiss="alert">×</a>
+						  <h4 class="alert-heading">Recuerda!</h4>
+								Puedes filtar la información por el tipo de Usuario y realizar la busqueda mas especifica.
+						</div>
+						<form method="get" class="form-horizontal">
+							<select name="type-search" class="span3"  id="select01">
+								<option value="1">Nombre</option>
+								<option value="2">Cedula</option>
+								<option value="3">Usuario</option>
+							</select>
+							
+							
+							
+							<input type="text" name="termino-search" class="span4" placeholder="Digite el termino de busqueda"/>
+							
+							<button type="submit" class="btn btn-primary">Filtrar</button>
+						
+						</form>
+						
+						
+						<table class="bordered" >
+							<tr>
+								<th>Cod.</th>
+								<th>Nombre</th>
+								<th>Edad</th>
+								<th>Telefono</th>
+								<th>Fecha Ingr.</th>
+								<th>Inspeccionar</th>
+							</tr>
+
+							<tr>
+								<td>1</td>
+								<td>Mark Otto</td>
+								<td>21</td>
+								<td>701564189</td>
+								<td>16 feb 2010</td>
+								<td ><a href="<?php echo $this->baseUrl()?>/estudiantes/info?id=78628173"><i class="icon-zoom-in"> </i> Mas..</a></td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Jacob Thornton</td>
+								<td>45</td>
+								<td>22225555t</td>
+								<td>15 May 2011</td>
+								<td ><a href="<?php echo $this->baseUrl()?>/estudiantes/info?id=78628173"><i class="icon-zoom-in"> </i> Mas..</a></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Larry the Bird</td>
+								<td>33</td>
+								<td>24425186</td>
+								<td>6 Jul 2009</td>
+								<td ><a href="<?php echo $this->baseUrl()?>/estudiantes/info?id=78628173"><i class="icon-zoom-in"> </i> Mas..</a></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Mark Otto</td>
+								<td>21</td>
+								<td>701564189</td>
+								<td>16 feb 2010</td>
+								<td ><a href="<?php echo $this->baseUrl()?>/estudiantes/info?id=78628173"><i class="icon-zoom-in"> </i> Mas..</a></td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Jacob Thornton</td>
+								<td>45</td>
+								<td>22225555t</td>
+								<td>15 May 2011</td>
+								<td ><a href="<?php echo $this->baseUrl()?>/estudiantes/info?id=78628173"><i class="icon-zoom-in"> </i> Mas..</a></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Larry the Bird</td>
+								<td>33</td>
+								<td>24425186</td>
+								<td>6 Jul 2009</td>
+								<td ><a href="<?php echo $this->baseUrl()?>/estudiantes/info?id=78628173"><i class="icon-zoom-in"> </i> Mas..</a></td>
+							</tr>
+							<tr>
+								<td>1</td>
+								<td>Mark Otto</td>
+								<td>21</td>
+								<td>701564189</td>
+								<td>16 feb 2010</td>
+								<td ><a href="<?php echo $this->baseUrl()?>/estudiantes/info?id=78628173"><i class="icon-zoom-in"> </i> Mas..</a></td>
+							</tr>
+							<tr>
+								<td>2</td>
+								<td>Jacob Thornton</td>
+								<td>45</td>
+								<td>22225555t</td>
+								<td>15 May 2011</td>
+								<td ><a href="<?php echo $this->baseUrl()?>/estudiantes/info?id=78628173"><i class="icon-zoom-in"> </i> Mas..</a></td>
+							</tr>
+							<tr>
+								<td>3</td>
+								<td>Larry the Bird</td>
+								<td>33</td>
+								<td>24425186</td>
+								<td>6 Jul 2009</td>
+								<td ><a href="<?php echo $this->baseUrl()?>/estudiantes/info?id=78628173"><i class="icon-zoom-in"> </i> Mas..</a></td>
+							</tr>
+							
+						</table>
+						
+					</div>
+				</div>
+				</div>
+			</div>
+		</div>
+		<!-- all scripts -->
+			<?php echo $this->partial("partials/all-scripts.phtml") ?>
+		<!-- all scripts -->
+	</body>
+</html>

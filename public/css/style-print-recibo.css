@@ -1,0 +1,26 @@
+#encabezado{
+	display:none;
+}
+
+#contenido .container .container-fluid .span3{
+	display:none;
+}
+
+#contenido .container .container-fluid .span9 .encabezadoRecibo{
+	display:none;
+}
+#contenido .container .container-fluid .span9 .miRecibo .form-actions{
+	display:none;
+}
+#contenido .container .container-fluid .span9 .miRecibo .bodyRecibo {
+margin-top:-45px;
+margin-left:-20px;
+}
+#contenido .container .container-fluid .span9 .miRecibo .bodyRecibo p {
+font-size:15px;
+}
+.bodyRecibo{
+
+background: url("../img/logo2.jpg");
+
+}
