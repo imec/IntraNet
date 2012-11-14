@@ -1,0 +1,30 @@
+<div>
+
+	<a href="agregar">Agregar</a>
+	<table>
+		<tr>
+			<td>Codigo</td>
+			<td>Nombre</td>
+			<td>Descripcion</td>
+		</tr>
+		
+		<?php if( count( $this->posts )) :?>
+		
+		<?php foreach( $this->posts as $post) :?>
+		
+		<tr>
+			<td><?php echo $post->codigo;?></td>
+			<td><?php echo $post->nombre;?></td>
+			<td><?php echo $post->descripcion;?></td>
+		</tr>
+		
+	
+		<?php endforeach;?>
+		<?php else : ?>
+		<tr>
+			<td colspan="3">No hay datos</td>
+		</tr>
+		
+		<?php endif;?>
+	</table>
+</div>

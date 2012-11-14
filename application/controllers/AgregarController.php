@@ -28,6 +28,7 @@ class AgregarController extends Zend_Controller_Action
     {
         // action body
     }
+	
 
 
 }
