@@ -1,29 +1,63 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <title>Zend Framework Default Application</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>IMEC. | ERROR</title>
+	<link rel="shortcut icon" href="<?php echo $this->baseUrl()?>/img/icono.png"/>
+	<!-- Styles -->
+		<?php echo $this->partial("partials/all-styles.phtml") ?>
+	<!-- Styles -->
 </head>
 <body>
-  <h1>An error occurred</h1>
-  <h2><?php echo $this->message ?></h2>
+	<div id="encabezado">
+		<div  class="navbar navbar-fixed-top  navbar-inverse">
+			<div class="navbar-inner">
+				<div  class="container">
+					
+					<a href="<?php echo $this->baseUrl()?>/"><img class="img-titulo"  src="<?php echo $this->baseUrl()?>/img/titulo.png"  style="margin-left:375px;"/> </a>
+					
+				</div>
+			</div><!-- /navbar-inner -->
+		</div>
+	</div>
+	<div id="contenido">
+		<div class="container">
+			<div class="container-fluid">
+			<div class="row-fluid">
+		
+				<div class="span9">
+					<h1>An error occurred</h1>
+					<p class="text-info">mensaje de error !!!</p>
+					
+					<h2><?php echo $this->message ?></h2>
 
-  <?php if (isset($this->exception)): ?>
+					<?php if (isset($this->exception)): ?>
+					
+					<div class="alert alert-error fade in">
+			
+						<h3 class="alert-heading">Exception information:</h3>
+						<b>Message:</b> <?php echo $this->exception->getMessage() ?>
+					</div>
+						
+					
+					<h3>Stack trace:</h3>
+					<pre><?php echo $this->exception->getTraceAsString() ?>
+					</pre>
+					<br>
+					<h3>Request Parameters:</h3>
+					<pre><?php echo $this->escape(var_export($this->request->getParams(), true)) ?>
+					</pre>
+
+					<?php endif ?>
+					<br>
+					<br>
+					<br>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+
   
-  <h3>Exception information:</h3>
-  <p>
-      <b>Message:</b> <?php echo $this->exception->getMessage() ?>
-  </p>
-
-  <h3>Stack trace:</h3>
-  <pre><?php echo $this->exception->getTraceAsString() ?>
-  </pre>
-
-  <h3>Request Parameters:</h3>
-  <pre><?php echo $this->escape(var_export($this->request->getParams(), true)) ?>
-  </pre>
-
-  <?php endif ?>
-
 </body>
 </html>
