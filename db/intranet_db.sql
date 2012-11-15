@@ -3,18 +3,12 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 14-11-2012 a las 23:47:35
--- Versión del servidor: 5.5.24-log
--- Versión de PHP: 5.4.3
+-- Tiempo de generación: 15-11-2012 a las 06:01:33
+-- Versión del servidor: 5.5.25
+-- Versión de PHP: 5.4.4
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
 
 --
 -- Base de datos: `intranet_db`
@@ -26,7 +20,7 @@ SET time_zone = "+00:00";
 -- Estructura de tabla para la tabla `abonofacturas`
 --
 
-CREATE TABLE IF NOT EXISTS `abonofacturas` (
+CREATE TABLE `abonofacturas` (
   `numeroAbono` int(11) NOT NULL AUTO_INCREMENT,
   `misFacturas_numeroFactura` int(11) NOT NULL,
   `fecha` date NOT NULL,
@@ -41,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `abonofacturas` (
 -- Estructura de tabla para la tabla `contdeptos`
 --
 
-CREATE TABLE IF NOT EXISTS `contdeptos` (
+CREATE TABLE `contdeptos` (
   `id` varchar(15) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
@@ -63,7 +57,7 @@ INSERT INTO `contdeptos` (`id`, `nombre`) VALUES
 -- Estructura de tabla para la tabla `contdptosdetalle`
 --
 
-CREATE TABLE IF NOT EXISTS `contdptosdetalle` (
+CREATE TABLE `contdptosdetalle` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `contDptos_id` varchar(15) NOT NULL,
   `nombre` varchar(50) NOT NULL,
@@ -97,7 +91,7 @@ INSERT INTO `contdptosdetalle` (`id`, `contDptos_id`, `nombre`) VALUES
 -- Estructura de tabla para la tabla `credenciales`
 --
 
-CREATE TABLE IF NOT EXISTS `credenciales` (
+CREATE TABLE `credenciales` (
   `usuarios_id` int(11) NOT NULL,
   `usuario` varchar(15) NOT NULL,
   `clave` varchar(50) NOT NULL,
@@ -118,7 +112,7 @@ INSERT INTO `credenciales` (`usuarios_id`, `usuario`, `clave`) VALUES
 -- Estructura de tabla para la tabla `cursos`
 --
 
-CREATE TABLE IF NOT EXISTS `cursos` (
+CREATE TABLE `cursos` (
   `codigo` varchar(15) NOT NULL,
   `nombre` varchar(50) NOT NULL,
   `descripcion` varchar(500) NOT NULL,
@@ -131,7 +125,8 @@ CREATE TABLE IF NOT EXISTS `cursos` (
 
 INSERT INTO `cursos` (`codigo`, `nombre`, `descripcion`) VALUES
 ('MYRC', 'Mantenimiento', 'Curso de reparacion'),
-('OSI', 'Operador de Computadoras', 'Curso básico de computación, niños, jovenes, adultos, adultos mayores ... etc');
+('OSI', 'Operador de Computadoras', 'Curso básico de computación, niños, jovenes, adultos, adultos mayores ... etc'),
+('toto', 'guapos', 'los mejores');
 
 -- --------------------------------------------------------
 
@@ -139,7 +134,7 @@ INSERT INTO `cursos` (`codigo`, `nombre`, `descripcion`) VALUES
 -- Estructura de tabla para la tabla `dias`
 --
 
-CREATE TABLE IF NOT EXISTS `dias` (
+CREATE TABLE `dias` (
   `id` varchar(1) NOT NULL,
   `nombre` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
@@ -164,7 +159,7 @@ INSERT INTO `dias` (`id`, `nombre`) VALUES
 -- Estructura de tabla para la tabla `fotos`
 --
 
-CREATE TABLE IF NOT EXISTS `fotos` (
+CREATE TABLE `fotos` (
   `usuarios_id` int(11) NOT NULL,
   `nombreFoto` varchar(50) NOT NULL,
   KEY `Llave foranea` (`usuarios_id`)
@@ -183,7 +178,7 @@ INSERT INTO `fotos` (`usuarios_id`, `nombreFoto`) VALUES
 -- Estructura de tabla para la tabla `generos`
 --
 
-CREATE TABLE IF NOT EXISTS `generos` (
+CREATE TABLE `generos` (
   `id` int(11) NOT NULL,
   `genero` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
@@ -203,7 +198,7 @@ INSERT INTO `generos` (`id`, `genero`) VALUES
 -- Estructura de tabla para la tabla `grupos`
 --
 
-CREATE TABLE IF NOT EXISTS `grupos` (
+CREATE TABLE `grupos` (
   `codigo` varchar(15) NOT NULL,
   `cursos_codigo` varchar(15) NOT NULL,
   `horarios_id` varchar(15) NOT NULL,
@@ -232,7 +227,7 @@ INSERT INTO `grupos` (`codigo`, `cursos_codigo`, `horarios_id`, `profesor_usuari
 -- Estructura de tabla para la tabla `horarios`
 --
 
-CREATE TABLE IF NOT EXISTS `horarios` (
+CREATE TABLE `horarios` (
   `id` varchar(15) NOT NULL,
   `dias_id` varchar(1) NOT NULL,
   `hora` varchar(15) NOT NULL,
@@ -255,7 +250,7 @@ INSERT INTO `horarios` (`id`, `dias_id`, `hora`, `descripcion`) VALUES
 -- Estructura de tabla para la tabla `miscursosmatriculados`
 --
 
-CREATE TABLE IF NOT EXISTS `miscursosmatriculados` (
+CREATE TABLE `miscursosmatriculados` (
   `usuarios_id` int(11) NOT NULL,
   `cursos_codigo` varchar(15) NOT NULL,
   `grupos_codigo` varchar(15) NOT NULL,
@@ -278,7 +273,7 @@ INSERT INTO `miscursosmatriculados` (`usuarios_id`, `cursos_codigo`, `grupos_cod
 -- Estructura de tabla para la tabla `misfacturas`
 --
 
-CREATE TABLE IF NOT EXISTS `misfacturas` (
+CREATE TABLE `misfacturas` (
   `numeroFactura` int(11) NOT NULL AUTO_INCREMENT,
   `usuarios_id` int(11) NOT NULL,
   `cursos_codigo` varchar(15) NOT NULL,
@@ -297,7 +292,7 @@ CREATE TABLE IF NOT EXISTS `misfacturas` (
 -- Estructura de tabla para la tabla `mismodulosmatriculados`
 --
 
-CREATE TABLE IF NOT EXISTS `mismodulosmatriculados` (
+CREATE TABLE `mismodulosmatriculados` (
   `usuarios_id` int(15) NOT NULL,
   `modulos_codigo` varchar(15) NOT NULL,
   PRIMARY KEY (`usuarios_id`,`modulos_codigo`),
@@ -319,7 +314,7 @@ INSERT INTO `mismodulosmatriculados` (`usuarios_id`, `modulos_codigo`) VALUES
 -- Estructura de tabla para la tabla `misnotas`
 --
 
-CREATE TABLE IF NOT EXISTS `misnotas` (
+CREATE TABLE `misnotas` (
   `usuarios_id` int(11) NOT NULL,
   `modulos_codigo` varchar(15) NOT NULL,
   `nota` int(11) NOT NULL,
@@ -335,7 +330,7 @@ CREATE TABLE IF NOT EXISTS `misnotas` (
 -- Estructura de tabla para la tabla `modulos`
 --
 
-CREATE TABLE IF NOT EXISTS `modulos` (
+CREATE TABLE `modulos` (
   `codigo` varchar(15) NOT NULL,
   `cursos_codigo` varchar(15) NOT NULL,
   `nombre` varchar(50) NOT NULL,
@@ -359,7 +354,7 @@ INSERT INTO `modulos` (`codigo`, `cursos_codigo`, `nombre`, `descripcion`) VALUE
 -- Estructura de tabla para la tabla `telefonos`
 --
 
-CREATE TABLE IF NOT EXISTS `telefonos` (
+CREATE TABLE `telefonos` (
   `usuarios_id` int(11) NOT NULL,
   `tiposTelefonos_id` int(11) NOT NULL,
   `numeroTelefono` int(11) NOT NULL,
@@ -383,7 +378,7 @@ INSERT INTO `telefonos` (`usuarios_id`, `tiposTelefonos_id`, `numeroTelefono`) V
 -- Estructura de tabla para la tabla `tipostelefonos`
 --
 
-CREATE TABLE IF NOT EXISTS `tipostelefonos` (
+CREATE TABLE `tipostelefonos` (
   `id` int(11) NOT NULL,
   `tipo` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
@@ -404,7 +399,7 @@ INSERT INTO `tipostelefonos` (`id`, `tipo`) VALUES
 -- Estructura de tabla para la tabla `tipousuarios`
 --
 
-CREATE TABLE IF NOT EXISTS `tipousuarios` (
+CREATE TABLE `tipousuarios` (
   `id` int(11) NOT NULL,
   `tipo` varchar(50) NOT NULL,
   PRIMARY KEY (`id`)
@@ -427,7 +422,7 @@ INSERT INTO `tipousuarios` (`id`, `tipo`) VALUES
 -- Estructura de tabla para la tabla `usuarios`
 --
 
-CREATE TABLE IF NOT EXISTS `usuarios` (
+CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `fechaRegistro` date NOT NULL,
   `nombre` varchar(50) NOT NULL,
@@ -545,7 +540,3 @@ ALTER TABLE `telefonos`
 ALTER TABLE `usuarios`
   ADD CONSTRAINT `usuarios_ibfk_1` FOREIGN KEY (`generos_id`) REFERENCES `generos` (`id`),
   ADD CONSTRAINT `usuarios_ibfk_2` FOREIGN KEY (`tipoUsuarios_id`) REFERENCES `tipousuarios` (`id`);
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
