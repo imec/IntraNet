@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IMEC. | Eliminar Curso</title>
+        <link rel="shortcut icon" href="<?php echo $this->baseUrl() ?>/img/icono.png"/>
+        <!-- Styles -->
+        <?php echo $this->partial("partials/all-styles.phtml") ?>
+        <!-- Styles -->
+    </head>
+    <body>
+        <div id="encabezado">
+            <?php echo $this->partial("partials/top-bar.phtml") ?>
+        </div>
+        <div id="contenido">
+            <div class="container">
+                <div class="container-fluid">
+                    <div class="row-fluid">
+                        <?php echo $this->partial("partials/menu-lat.phtml") ?>
+                        <div class="span9">
+                            <h1>Eliminar Curso</h1><br>
+                            <div  class="alert alert-error fade in">
+                                <a class="close" data-dismiss="alert">x</a>
+                                <h4 class="alert-heading">Atencion! </h4>
+                                 Si aceptas eliminar el curso no podras revertir esta accion... 
+                            </div>
+
+                            <form class="form-horizontal" action="" method="POST">
+                                <fieldset>
+                                    <br>
+                                    
+                                    <h3>Est&aacute; seguro de querer borrar el curso: 
+                                        <?php echo $this->curso['nombre']; ?> 
+                                    </h3>
+                                    <div class="form-actions">
+                                        <input type="hidden" name="id" value="<?php echo $this->curso['codigo']; ?>" /> 
+                                        <input type="submit" name="del" class="btn btn-danger" value="Si" />
+                                         <input type="submit" name="del" class="btn btn-success" value="No" />
+                                        
+                                    </div>
+                                </fieldset>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- all scripts -->
+        <?php echo $this->partial("partials/all-scripts.phtml") ?>
+        <!-- all scripts -->
+    </body>
+</html>

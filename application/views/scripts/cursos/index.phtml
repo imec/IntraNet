@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IMEC. | Agegar Curso</title>
+        <link rel="shortcut icon" href="<?php echo $this->baseUrl() ?>/img/icono.png"/>
+        <!-- Styles -->
+        <?php echo $this->partial("partials/all-styles.phtml") ?>
+        <!-- Styles -->
+    </head>
+    <body>
+        <div id="encabezado">
+            <?php echo $this->partial("partials/top-bar.phtml") ?>
+        </div>
+        <div id="contenido">
+            <div class="container">
+                <div class="container-fluid">
+                    <div class="row-fluid">
+                        <?php echo $this->partial("partials/menu-lat.phtml") ?>
+                        <div class="span9">
+                            <h1>Listado de Cursos !!!</h1>
+                            <p class="text-info">Cursos IMEC</p>
+                            <br>
+                            <a href="add" type="button" class="btn btn-success">Agregar nuevo curso</a>
+                             <br><br>
+                            <table class="bordered" >
+                                <tr>
+                                    <th>Cod.</th>
+                                    <th>Nombre</th>
+                                    <th>Descripcion</th>
+                                     <th>Editar</th>
+                                      <th>Eliminar</th>
+                                </tr>
+                                <?php
+                                if (count($this->misCursos)) {
+                                    foreach ($this->misCursos as $row) {
+                                        echo "
+                                                 <tr>
+                                                    <td>" . $row->codigo . "</td>
+                                                    <td>" . $row->nombre . "</td>
+                                                    <td>" . $row->descripcion . "</td>
+                                                    <td> &nbsp; &nbsp;<a href='".$this->url(array('controller'=>'cursos','action'=>'edit','id'=>$row->codigo))."'><i class='icon-edit'></i></a></td>
+                                                    <td>&nbsp;&nbsp;  &nbsp; <a href='".$this->url(array('controller'=>'cursos','action'=>'delete','id'=>$row->codigo))."'> <i class='icon-remove'></i></a></td>
+                                                 </tr>
+                                            ";
+                                    }
+                                } else {
+                                        echo "
+                                                 <tr>
+                                                    <td colspan='6'>No se encontraron cursos</td>
+                                                  </tr>
+                                            ";
+                                }
+                                ?>   
+                            </table>
+                            <br><br><br><br>
+
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- all scripts -->
+        <?php echo $this->partial("partials/all-scripts.phtml") ?>
+        <!-- all scripts -->
+    </body>
+</html>

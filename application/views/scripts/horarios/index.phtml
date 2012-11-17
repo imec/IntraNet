@@ -17,36 +17,45 @@
 				<div class="row-fluid">
 					<?php echo $this->partial("partials/menu-lat.phtml") ?>
 					<div class="span9">
-						<h1>Agrega un nuevo curso !!!</h1>
-						<p class="text-info">Llena los siguientes campos con los datos del Curso.</p>
+						<h1>Agrega un nuevo horario !!!</h1>
+						<p class="text-info">Llena los siguientes campos con los datos del Horario.</p>
 						
 						
 						<form class="form-horizontal" action="" method="POST">
 							<fieldset>
 							  <br><br>
-							  <div class="control-group success">
-									<label class="control-label" for="user">Codigo: </label>
+							 <div class="control-group">
+									<label class="control-label" for="curso">Día: </label>
 									<div class="controls">
-									  <input type="text" class="input-xlarge" name="codigo" id="user">
-									  <span class="help-inline">Habilitado!</span>
+									 <select class="span5" id="dia">
+										<option>- -  Seleccione un Día - - </option>
+										<option>Lunes</option>
+										<option>Martes</option>
+										<option>Miercoles</option>
+										<option>Jueves</option>
+										<option>Viernes</option>
+										<option>Sábado</option>
+										<option>Domingo</option>
+									  </select>
+									  <span class="help-inline"></span>
 									</div>
 								</div>
 								
 								<div class="control-group">
-									<label class="control-label" for="nombreCompleto">Nombre Curso: </label>
+									<label class="control-label" for="nombreCompleto">Horario: </label>
 									<div class="controls">  
-										<input type="text" placeholder="Nombre"  name="nombre" class="input-medium" id="nombre">
+										<input type="text" placeholder="Digite el horario" class="input-medium" id="nombre">
 										
 									</div>
 								</div>	
 							
 								<div class="control-group">
-									<label class="control-label" for="comentario">Descripcion del Curso: </label>
+									<label class="control-label" for="comentario">Descripcion del Horario: </label>
 									<div class="controls">
-										<textarea class="input-xlarge"  name="descripcion" id="comentario" rows="3"></textarea>
+										<textarea class="input-xlarge" id="comentario" rows="3"></textarea>
 									</div>
 								</div>
-
+							
 								<div class="form-actions">
 									<button type="submit" class="btn btn-primary">Completar Registro</button>
 								</div>

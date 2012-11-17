@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IMEC. | Editar Curso</title>
+        <link rel="shortcut icon" href="<?php echo $this->baseUrl() ?>/img/icono.png"/>
+        <!-- Styles -->
+        <?php echo $this->partial("partials/all-styles.phtml") ?>
+        <!-- Styles -->
+    </head>
+    <body>
+        <div id="encabezado">
+            <?php echo $this->partial("partials/top-bar.phtml") ?>
+        </div>
+        <div id="contenido">
+            <div class="container">
+                <div class="container-fluid">
+                    <div class="row-fluid">
+                        <?php echo $this->partial("partials/menu-lat.phtml") ?>
+                        <div class="span9">
+                            <h1>Agrega un nuevo curso !!!</h1>
+                            <p class="text-info">Llena los siguientes campos con los datos del Curso.</p>
+
+
+                            <form class="form-horizontal" action="" method="POST">
+                                <fieldset>
+                                    <br><br>
+                                    <div class="control-group success">
+                                        <label class="control-label" for="user">Codigo: </label>
+									
+                                        <div class="controls">
+                                            <input type="text" readonly="" class="input-xlarge" name="codigo" id="user" value="<?php echo $this->curso['codigo']; ?>">
+                                        </div>
+                                    </div>
+                                                                
+                                    <div class="control-group">
+                                        <label class="control-label" for="nombreCompleto">Nombre Curso: </label>
+                                        <div class="controls">  
+                                            <input type="text" placeholder="Nombre"  name="nombre" class="input-medium" id="nombre" value="<?php echo $this->curso['nombre']; ?>">
+
+                                        </div>
+                                    </div>	
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="comentario">Descripcion del Curso: </label>
+                                        <div class="controls">
+                                            <textarea class="input-xlarge"  name="descripcion" id="comentario" rows="3" ><?php echo $this->curso['descripcion']; ?></textarea>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn btn-primary">Actualizar</button>
+                                    </div>
+                                </fieldset>
+                            </form>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- all scripts -->
+        <?php echo $this->partial("partials/all-scripts.phtml") ?>
+        <!-- all scripts -->
+    </body>
+</html>

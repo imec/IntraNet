@@ -10,11 +10,19 @@
 				<li><a href="<?php echo $this->baseUrl()?>/facturar/search"><i class="icon-list-alt"></i> Facturar</a></li>
 				<li><a href="<?php echo $this->baseUrl()?>/matricular/search"><i class="icon-plus-sign"></i> Matricular</a></li>
 				<li><a href="<?php echo $this->baseUrl()?>/estudiantes/search"><i class="icon-zoom-in"></i> Consultar Estudiantes</a></li>
-
+                                         
 				<li class="divider"></li>
 				<li><a href="<?php echo $this->baseUrl()?>/registro/"><i class="icon-user"></i> Registrar Usuario</a></li>
-				<li><a href="<?php echo $this->baseUrl()?>/agregar/"><i class="icon-file"></i> Agregar</a></li>
-				
+				 <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-file"></i> M&aacute;s Componentes<b class="caret"></b></a>
+                                    <ul class="dropdown-menu">
+                                      <li><a href="<?php echo $this->baseUrl()?>/cursos/">Cursos</a></li>
+                                      <li><a href="<?php echo $this->baseUrl()?>/modulos/">Modulos</a></li>
+                                      <li><a href="<?php echo $this->baseUrl()?>/grupos/">Grupos</a></li>
+                                      <li><a href="<?php echo $this->baseUrl()?>/horarios/">Horarios</a></li>
+                                    </ul>
+                                </li>  
+                                
 			<!-- MENU PARA USUARIOS ESTUDIANTES
 				<li class="nav-header">Victor Araya</li>
 				<li><a href="#"><i class="icon-book"></i> Cursos</a></li>
@@ -42,8 +50,8 @@
 
 <div id="myModal" class="modal hide fade in" style="display: none; ">					
 	<div class="modal-header">
-		<a class="close" data-dismiss="modal">×</a>
-		<h3>Envia tu mensaje a continuación	</h3>
+		<a class="close" data-dismiss="modal">ï¿½</a>
+		<h3>Envia tu mensaje a continuaciï¿½n	</h3>
 	</div>
 	<form method="post" class="form-horizontal">
 		<div class="modal-body">
@@ -55,7 +63,7 @@
 							<option></option>
 							<option>Duda Administrativa</option>
 							<option>Consulta de Estudiante</option>
-							<option>Información Sobre algun Curso</option>
+							<option>Informaciï¿½n Sobre algun Curso</option>
 							<option>Otros</option>
 						</select>
 					</div>

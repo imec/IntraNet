@@ -11,16 +11,17 @@ class EstudiantesController extends Zend_Controller_Action {
     }
 
     public function searchAction() {
-    
-        if($_GET['tipo']=="" || $_GET['id']==""){
-             $model = new Application_Model_dbTables_Usuarios();
-             $this->view->miEstudiante = $model->getAll();
-        }else{
+
+        if ($_GET['tipo'] == "" || $_GET['id'] == "") {
+            $model = new Application_Model_dbTables_Usuarios();
+            $this->view->miEstudiante = $model->getAll();
+        } else {
             $param = $_GET['id']; //obtiene el parametro
-			$tipo = $_GET['tipo']; //obtiene el parametro
+            $tipo = $_GET['tipo']; //obtiene el parametro
             $model = new Application_Model_dbTables_Usuarios(); //crea el modelo
-            $this->view->estSer = $model->getUsuario($param, $tipo); 
+            $this->view->estSer = $model->getUsuario($param, $tipo);
         }
     }
+
 }
 
