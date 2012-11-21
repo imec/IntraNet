@@ -10,7 +10,7 @@ class MatricularController extends Zend_Controller_Action
 
     public function matricularAction()
     {
-        if(empty($_GET) || $_GET['id']== "") {
+        if(empty($_GET) || $_GET['id']== "" || $_GET['tipo']=="") {
             $this->_redirect('/matricular/search/');
         }else{
             
@@ -22,7 +22,7 @@ class MatricularController extends Zend_Controller_Action
     }
 	public function searchAction()
     {
-        if(empty($_GET)) {
+        if(empty($_GET) || $_GET['id']== "" || $_GET['tipo']=="") {
             $model = new Application_Model_dbTables_Usuarios();
             $this->view->miEstudiante = $model->getAll();
         }else{

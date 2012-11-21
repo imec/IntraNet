@@ -7,7 +7,7 @@ class EstudiantesController extends Zend_Controller_Action {
     }
 
     public function infoAction() {
-        if(empty($_GET) || $_GET['id']== "") {
+        if(empty($_GET) || $_GET['id']== "" || $_GET['tipo']=="") {
             $this->_redirect('/estudiantes/search/');
         }else{
             
@@ -16,7 +16,7 @@ class EstudiantesController extends Zend_Controller_Action {
 
     public function searchAction() {
         
-        if(empty($_GET)) {
+        if(empty($_GET) || $_GET['id']== "" || $_GET['tipo']=="") {
             $model = new Application_Model_dbTables_Usuarios();
             $this->view->miEstudiante = $model->getAll();
         }else{
