@@ -18,7 +18,11 @@ class FacturarController extends Zend_Controller_Action
     }
 	public function detalleAction()
     {
-        // action body
+        if(empty($_GET) || $_GET['id']== "") {
+             $this->_redirect('/facturar/search/');   
+        }else{
+            
+        } 
     }
 	public function historialAction()
     {
@@ -26,7 +30,15 @@ class FacturarController extends Zend_Controller_Action
     }
 	public function searchAction()
     {
-        // action body
+        if(empty($_GET)) {
+            $model = new Application_Model_dbTables_Usuarios();
+            $this->view->miEstudiante = $model->getAll();
+        }else{
+            $param = $_GET['id']; //obtiene el parametro
+            $tipo = $_GET['tipo']; //obtiene el parametro
+            $model = new Application_Model_dbTables_Usuarios(); //crea el modelo
+            $this->view->estSer = $model->searchUser($param, $tipo);
+        } 
     }
 
 }

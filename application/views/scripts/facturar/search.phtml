@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>IMEC. | Facturación</title>
+            <title>IMEC. | Facturaci&oacute;n</title>
 		<link rel="shortcut icon" href="<?php echo $this->baseUrl()?>/img/icono.png"/>
 		<!-- Styles -->
 			<?php echo $this->partial("partials/all-styles.phtml") ?>
@@ -17,61 +17,71 @@
 				<div class="row-fluid">
 					<?php echo $this->partial("partials/menu-lat.phtml") ?>
 					<div class="span9">
-						<h1>Sistema de Facturación !!!</h1>
-						<p class="text-info">Busca el Usuario deseado y realiaza el tramite de Facturación correspondiente.</p>
+                                            <h1>Sistema de Facturaci&oacute;n !!!</h1>
+                                            <p class="text-info">Busca el Usuario deseado y realiaza el tramite de Facturaci&oacute;n correspondiente.</p>
 						<br>
 						
 						<form method="get" class="form-horizontal">
-							<select name="type-search" class="span3"  id="select01">
-								<option value="1">Nombre</option>
-								<option value="2">Cedula</option>
-								<option value="3">Usuario</option>
-							</select>
-							<input type="text" name="termino-search" class="span4" placeholder="Digite el termino de busqueda"/>
-							
-							<button type="submit" class="btn btn-primary">Buscar</button>
-						
-						</form>
-						
-						<table class="bordered">
-							<tr>
-							
-								<th>Nombre</th>
-								<th>Grupo</th>
-								<th>Telefono</th>
-								<th >Facturas</th>
-							</tr>
+                                                    <select name="tipo" class="span3"  id="select01">
+                                                        <option value="1">Nombre</option>
+                                                        <option value="2">Cedula</option>
+                                                        <option value="3">Usuario</option>
+                                                    </select>
 
-							<tr>
-				
-								<td>Mark Otto</td>
-								<td>Viernes 8 a 11</td>
-								<td>701564189</td>
-								<td ><a href="<?php echo $this->baseUrl()?>/facturar/detalle?id=78628173"><i class="icon-pencil"> </i> Facturar</a></td>
-							</tr>
-							<tr>
+
+
+                                                    <input type="text" name="id" class="span4" placeholder="Digite el termino de busqueda"/>
+
+                                                    <button type="submit" class="btn btn-primary">Filtrar</button>
+
+                                                </form> 
 						
-								<td>Jacob Thornton</td>
-								<td>Sabado 8 a 11</td>
-								<td>22225555t</td>
-								<td ><a href="<?php echo $this->baseUrl()?>/facturar/facturar?id=78628173"><i class="icon-pencil"> </i> Facturar</a></td>
-							</tr>
-							<tr>
-						
-								<td>Larry the Bird</td>
-								<td>Lunes 2 a 5</td>
-								<td>24425186</td>
-								<td ><a href="<?php echo $this->baseUrl()?>/facturar/facturar?id=78628173"><i class="icon-pencil"> </i> Facturar</a></td>
-							</tr>
-							<tr>
-				
-								<td>Mark Otto</td>
-								<td>Miercoles 8 a 11</td>
-								<td>701564189</td>
-								<td ><a href="<?php echo $this->baseUrl()?>/facturar/facturar?id=78628173"><i class="icon-pencil"> </i> Facturar</a></td>
-							</tr>
-							
-						</table>
+						<table class="bordered" >
+                                                    <tr>
+                                                        <th>Cod.</th>
+                                                        <th>Nombre</th>
+                                                        <th>Edad</th>
+                                                        <th>Telefono</th>
+                                                        <th>Acci&oacute;n</th>
+                                                    </tr>
+                                                    <?php
+                                                    if (count($this->miEstudiante)) {
+                                                        foreach ($this->miEstudiante as $row) {
+                                                            echo "
+                                                                     <tr>
+                                                                        <td>" . $row->id . "</td>
+                                                                        <td>" . $row->nombre . " " . $row->apellido1 . "</td>
+                                                                        <td>" . $row->getEdad() . "</td>
+                                                                        <td>" . $row->identificacion . "</td>
+                                                                        <td ><a href='" . $this->baseUrl() . "/facturar/detalle?id=" . $row->id . "'><i class='icon-pencil'> </i> Facturar</a></td>
+                                                                    </tr>
+                                                                ";
+                                                        } 
+                                                    } else {
+                                                        if (count($this->estSer)) {
+                                                              foreach ($this->estSer as $row) {
+                                                                echo "
+                                                                   <tr>
+                                                                        <td>" . $row->id . "</td>
+                                                                        <td>" . $row->nombre . " " . $row->apellido1 . "</td>
+                                                                        <td>" . $row->getEdad() . "</td>
+                                                                        <td>" . $row->identificacion . "</td>
+                                                                        <td ><a href='" . $this->baseUrl() . "/facturar/detalle?id=" . $row->id . "'><i class='icon-pencil'> </i> Facturar</a></td>
+                                                                    </tr>
+                                                                    ";
+                                                            }
+                                                        }else{
+                                                            echo "
+                                                                     <tr>
+                                                                        <td colspan='6'>No se encontraron registros</td>
+                                                                      </tr>
+                                                                ";
+                                                        }    
+                                                    }
+                                                    ?>   
+                                                </table>
+                                                
+                                                
 						
 						
 					</div>

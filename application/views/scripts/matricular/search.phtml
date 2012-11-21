@@ -20,66 +20,71 @@
 						<h1>Matricular Nuevo Curso.</h1>
 						<p class="text-info">Busca el Usuario deseado y realiaza el preoceso de Matricula respectivo.</p>
 						<div class="alert alert-block fade in">
-						  <a class="close" data-dismiss="alert">×</a>
-						  <h4 class="alert-heading">Atención!</h4>
-						  Si el Estudiante no se encuentra registrado en la base de datos, por favor sigue <a href="<?php echo $this->baseUrl()?>/registro/registro">este enlace</a>
+						  <a class="close" data-dismiss="alert">x</a>
+                                                  <h4 class="alert-heading">Atenci&oacute;n!</h4>
+						  Si el Estudiante no se encuentra registrado en la base de datos, por favor sigue <a href="<?php echo $this->baseUrl()?>/registro/">este enlace</a>
 						</div>
 					
-						<form method="get"  class="form-horizontal">
-							<select name="type-search" class="span3"  id="select01">
-								<option value="1">Nombre</option>
-								<option value="2">Cedula</option>
-								<option value="3">Usuario</option>
-							</select>
-							
-							
-							
-							<input type="text" name="termino-search" class="span4" placeholder="Digite el termino de busqueda"/>
-							
-							<button type="submit" class="btn btn-primary">Filtrar</button>
-						
-						</form>
-						
-						
-						<table class="bordered">
-							<tr>
-							
-								<th>Nombre</th>
-								<th>Edad</th>
-								<th>Telefono</th>
-								<th >Acción</th>
-							</tr>
+						<form method="get" class="form-horizontal">
+                                                    <select name="tipo" class="span3"  id="select01">
+                                                        <option value="1">Nombre</option>
+                                                        <option value="2">Cedula</option>
+                                                        <option value="3">Usuario</option>
+                                                    </select>
 
-							<tr>
-				
-								<td>Mark Otto</td>
-								<td>21</td>
-								<td>701564189</td>
-								<td ><a href="<?php echo $this->baseUrl()?>/matricular/matricular?id=78628173"><i class="icon-pencil"> </i> Matricular</a></td>
-							</tr>
-							<tr>
+
+
+                                                    <input type="text" name="id" class="span4" placeholder="Digite el termino de busqueda"/>
+
+                                                    <button type="submit" class="btn btn-primary">Filtrar</button>
+
+                                                </form>
+                                                    
+						<table class="bordered" >
+                                                    <tr>
+                                                        <th>Cod.</th>
+                                                        <th>Nombre</th>
+                                                        <th>Edad</th>
+                                                        <th>Telefono</th>
+                                                        <th>Acci&oacute;n</th>
+                                                    </tr>
+                                                    <?php
+                                                    if (count($this->miEstudiante)) {
+                                                        foreach ($this->miEstudiante as $row) {
+                                                            echo "
+                                                                     <tr>
+                                                                        <td>" . $row->id . "</td>
+                                                                        <td>" . $row->nombre . " " . $row->apellido1 . "</td>
+                                                                        <td>" . $row->getEdad() . "</td>
+                                                                        <td>" . $row->identificacion . "</td>
+                                                                        <td ><a href='" . $this->baseUrl() . "/matricular/matricular?id=" . $row->id . "'><i class='icon-pencil'> </i> Matricular..</a></td>
+                                                                    </tr>
+                                                                ";
+                                                        } 
+                                                    } else {
+                                                        if (count($this->estSer)) {
+                                                              foreach ($this->estSer as $row) {
+                                                                echo "
+                                                                   <tr>
+                                                                        <td>" . $row->id . "</td>
+                                                                        <td>" . $row->nombre . " " . $row->apellido1 . "</td>
+                                                                        <td>" . $row->getEdad() . "</td>
+                                                                        <td>" . $row->identificacion . "</td>
+                                                                        <td ><a href='" . $this->baseUrl() . "/matricular/matricular?id=" . $row->id . "'><i class='icon-pencil'> </i> Matricular..</a></td>
+                                                                    </tr>
+                                                                    ";
+                                                            }
+                                                        }else{
+                                                            echo "
+                                                                     <tr>
+                                                                        <td colspan='6'>No se encontraron registros</td>
+                                                                      </tr>
+                                                                ";
+                                                        }    
+                                                    }
+                                                    ?>   
+                                                </table>
 						
-								<td>Jacob Thornton</td>
-								<td>45</td>
-								<td>22225555t</td>
-								<td ><a href="<?php echo $this->baseUrl()?>/matricular/matricular?id=78628173"><i class="icon-pencil"> </i> Matricular</a></td>
-							</tr>
-							<tr>
-						
-								<td>Larry the Bird</td>
-								<td>33</td>
-								<td>24425186</td>
-								<td ><a href="<?php echo $this->baseUrl()?>/matricular/matricular?id=78628173"><i class="icon-pencil"> </i> Matricular</a></td>
-							</tr>
-							<tr>
-				
-								<td>Mark Otto</td>
-								<td>21</td>
-								<td>701564189</td>
-								<td ><a href="<?php echo $this->baseUrl()?>/matricular/matricular?id=78628173"><i class="icon-pencil"> </i> Matricular</a></td>
-							</tr>
-							
-						</table>
 						
 						
 					</div>
