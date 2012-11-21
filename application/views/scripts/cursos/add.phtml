@@ -22,49 +22,49 @@
 
                             <?php
                             if ($this->post == true) {
-                                if (count($this->errors) > 0) {  ?>
+                                if (count($this->errors) > 0) {
+                                    ?>
                                     <form class="form-horizontal" action="" method="POST">
                                         <fieldset>
                                             <br><br>
-                                            <?php 
-                                            if (in_array("codigo", $this->errors)) {?>
-                                                 <div class="control-group error">
-                                                   <label class="control-label" for="user">Codigo: </label>
-                                                   <div class="controls">
-                                                       <input type="text" class="input-xlarge" name="codigo" value="<?php echo $this->curso['codigo'];?>" id="user">
-                                                       <span class="help-inline">Campo Requerido!</span>
-                                                   </div>
-                                                   
-                                                 </div>
-                                            <?php
-                                            }else{?>
-                                                 <div class="control-group success">
-                                                   <label class="control-label" for="user">Codigo: </label>
-                                                   <div class="controls">
-                                                       <input type="text" class="input-xlarge" name="codigo" value="<?php echo $this->curso['codigo'];?>" id="user">
+              <!--  **********************************  VALIDO SI EL CODIGO CONTIENE ERRORES ***********    -->
+                                            <?php if (in_array("codigo", $this->errors)) { ?>
+                                                <div class="control-group error">
+                                                    <label class="control-label" for="user">Codigo: </label>
+                                                    <div class="controls">
+                                                        <input type="text" class="input-xlarge" name="codigo" value="<?php echo $this->curso['codigo']; ?>" id="user">
+                                                        <span class="help-inline">Campo Requerido!</span>
+                                                    </div>
+
+                                                </div>
+                                                <?php } else { ?>
+                                                <div class="control-group success">
+                                                    <label class="control-label" for="user">Codigo: </label>
+                                                    <div class="controls">
+                                                        <input type="text" class="input-xlarge" name="codigo" value="<?php echo $this->curso['codigo']; ?>" id="user">
                                                         <span class="help-inline">  ok!</span>
-                                                   </div>
-                                                   
-                                                 </div>  
-                                            <?php }
-                                            ?>
+                                                    </div>
+
+                                                </div>  
+                                            <?php } ?>
+              <!--  **********************************  VALIDO SI EL NOMBRE CONTIENE ERRORES ***********    -->
                                             <div class="control-group">
                                                 <label class="control-label" for="nombreCompleto">Nombre Curso: </label>
                                                 <div class="controls">  
-                                                    <input type="text" placeholder="Nombre" value="<?php echo $this->curso['nombre'];?>" name="nombre" class="input-medium" id="nombre">
+                                                    <input type="text" placeholder="Nombre" value="<?php echo $this->curso['nombre']; ?>" name="nombre" class="input-medium" id="nombre">
 
                                                 </div>
                                             </div>	
-
+              <!--  **********************************  VALIDO SI LA DESCRIPCION CONTIENE ERRORES ***********    -->
                                             <div class="control-group">
                                                 <label class="control-label" for="comentario">Descripcion del Curso: </label>
                                                 <div class="controls">
-                                                    <textarea class="input-xlarge"  name="descripcion" id="comentario" rows="3"><?php echo $this->curso['descripcion'];?></textarea>
+                                                    <textarea class="input-xlarge"  name="descripcion" id="comentario" rows="3"><?php echo $this->curso['descripcion']; ?></textarea>
                                                 </div>
                                             </div>
 
                                             <div class="form-actions">
-                                                <button type="submit" class="btn btn-primary">Agegar Curso</button>
+                                                <button type="submit" class="btn btn-primary">Agregar Curso</button>
                                             </div>
                                         </fieldset>
                                     </form>
@@ -99,7 +99,7 @@
 								</div>
 
 								<div class="form-actions">
-									<button type="submit" class="btn btn-primary">Agegar Curso</button>
+									<button type="submit" class="btn btn-primary">Agregar Curso</button>
 								</div>
 							</fieldset>
 						</form>

@@ -10,21 +10,13 @@
 </head>
 <body>
 	<div id="encabezado">
-		<div  class="navbar navbar-fixed-top  navbar-inverse">
-			<div class="navbar-inner">
-				<div  class="container">
-					
-					<a href="<?php echo $this->baseUrl()?>/"><img class="img-titulo"  src="<?php echo $this->baseUrl()?>/img/titulo.png"  style="margin-left:375px;"/> </a>
-					
-				</div>
-			</div><!-- /navbar-inner -->
-		</div>
-	</div>
+            <?php echo $this->partial("partials/top-bar.phtml") ?>
+        </div>
 	<div id="contenido">
 		<div class="container">
 			<div class="container-fluid">
 			<div class="row-fluid">
-		
+                                 <?php echo $this->partial("partials/menu-lat.phtml") ?>
 				<div class="span9">
 					<h1>An error occurred</h1>
 					<p class="text-info">mensaje de error !!!</p>
@@ -57,7 +49,9 @@
 			</div>
 		</div>
 	</div>
-
+ <!-- all scripts -->
+        <?php echo $this->partial("partials/all-scripts.phtml") ?>
+        <!-- all scripts -->
   
 </body>
 </html>

@@ -1,79 +1,70 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>IMEC. | Agegar Curso</title>
-		<link rel="shortcut icon" href="<?php echo $this->baseUrl()?>/img/icono.png"/>
-		<!-- Styles -->
-			<?php echo $this->partial("partials/all-styles.phtml") ?>
-		<!-- Styles -->
-	</head>
-	<body>
-		<div id="encabezado">
-			<?php echo $this->partial("partials/top-bar.phtml") ?>
-		</div>
-		<div id="contenido">
-			<div class="container">
-				<div class="container-fluid">
-				<div class="row-fluid">
-					<?php echo $this->partial("partials/menu-lat.phtml") ?>
-					<div class="span9">
-						<h1>Agrega un nuevo modulo !!!</h1>
-						<p class="text-info">Llena los siguientes campos con los datos del Modulo.</p>
-						
-						
-						<form class="form-horizontal" action="" method="POST">
-							<fieldset>
-							  <br><br>
-							  <div class="control-group success">
-									<label class="control-label" for="user">Codigo: </label>
-									<div class="controls">
-									  <input type="text" class="input-xlarge" id="user">
-									  <span class="help-inline">Habilitado!</span>
-									</div>
-								</div>
-								
-								<div class="control-group">
-									<label class="control-label" for="nombreCompleto">Nombre Curso: </label>
-									<div class="controls">  
-										<input type="text" placeholder="Nombre" class="input-medium" id="nombre">
-										
-									</div>
-								</div>	
-							
-								<div class="control-group">
-									<label class="control-label" for="comentario">Descripcion del Curso: </label>
-									<div class="controls">
-										<textarea class="input-xlarge" id="comentario" rows="3"></textarea>
-									</div>
-								</div>
-								<div class="control-group">
-									<label class="control-label" for="curso">Curso al que pertenece: </label>
-									<div class="controls">
-									 <select class="span5" id="curso">
-										<option>- -  Seleccione un Curso - - </option>
-										<option>Operador en Sistemas Informáticos</option>
-										<option>Técnico Operador en Sistemas Informáticos</option>
-										<option>Mantenimiento y Reparación</option>
-										<option>Excel Avanzado VBA</option>
-										<option>Diseño de Paginas Web</option>
-									  </select>
-									  <span class="help-inline"></span>
-									</div>
-								</div>
-								<div class="form-actions">
-									<button type="submit" class="btn btn-primary">Completar Registro</button>
-								</div>
-							</fieldset>
-						</form>
+    <head>
+        <title>IMEC. | Modulos</title>
+        <link rel="shortcut icon" href="<?php echo $this->baseUrl() ?>/img/icono.png"/>
+        <!-- Styles -->
+        <?php echo $this->partial("partials/all-styles.phtml") ?>
+        <!-- Styles -->
+    </head>
+    <body>
+        <div id="encabezado">
+            <?php echo $this->partial("partials/top-bar.phtml") ?>
+        </div>
+        <div id="contenido">
+            <div class="container">
+                <div class="container-fluid">
+                    <div class="row-fluid">
+                        <?php echo $this->partial("partials/menu-lat.phtml") ?>
+                        <div class="span9">
+                            <h1>Listado de Modulos !!!</h1>
+                            <p class="text-info">Modulos IMEC</p>
+                            <br>
+                            <a href="add" type="button" class="btn btn-success">Agregar nuevo modulo</a>
+                            <br><br>
+                            <table class="bordered" >
+                                <tr>
+                                    <th>Cod.</th>
+                                    <th>Nombre</th>
+                                    <th>Curso</th>
+                                    <th>Descripcion</th>
+                                    <th>Editar</th>
+                                    <th>Eliminar</th>
+                                </tr>
+                                <?php
+                                if (count($this->misModulos)) {
+                                    foreach ($this->misModulos as $row) {
+                                        echo "
+                                                 <tr>
+                                                    <td>" . $row->codigo . "</td>
+                                                    <td>" . $row->nombre . "</td>
+                                                    <td>" . $row->cursos_codigo . "</td>     
+                                                    <td>" . $row->descripcion . "</td>
+                                                    <td> &nbsp; &nbsp;<a href='" . $this->url(array('controller' => 'modulos', 'action' => 'edit', 'id' => $row->codigo)) . "'><i class='icon-edit'></i></a></td>
+                                                    <td>&nbsp;&nbsp;  &nbsp; <a href='" . $this->url(array('controller' => 'modulos', 'action' => 'delete', 'id' => $row->codigo)) . "'> <i class='icon-remove'></i></a></td>
+                                                 </tr>
+                                            ";
+                                    }
+                                } else {
+                                    echo "
+                                                 <tr>
+                                                    <td colspan='6'>No se encontraron cursos</td>
+                                                  </tr>
+                                            ";
+                                }
+                                ?>   
+                            </table>
+                            <br><br><br><br>
 
 
-					</div>
-				</div>
-				</div>
-			</div>
-		</div>
-		<!-- all scripts -->
-			<?php echo $this->partial("partials/all-scripts.phtml") ?>
-		<!-- all scripts -->
-	</body>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- all scripts -->
+        <?php echo $this->partial("partials/all-scripts.phtml") ?>
+        <!-- all scripts -->
+    </body>
 </html>
