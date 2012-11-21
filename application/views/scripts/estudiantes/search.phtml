@@ -58,25 +58,27 @@
                                                  <tr>
                                                     <td>" . $row->id . "</td>
                                                     <td>" . $row->nombre . " " . $row->apellido1 . "</td>
-                                                    <td>" . $row->fechaNacimiento . "</td>
+                                                    <td>" . $row->getEdad() . "</td>
                                                     <td>" . $row->identificacion . "</td>
                                                     <td>" . $row->fechaRegistro . "</td>
                                                     <td ><a href='" . $this->baseUrl() . "/estudiantes/info?id=" . $row->id . "'><i class='icon-zoom-in'> </i> Mas..</a></td>
                                                 </tr>
                                             ";
-                                    }
+                                    } 
                                 } else {
                                     if (count($this->estSer)) {
-                                        echo "
-                                           <tr>
-                                           <td>" . $this->estSer['id'] . "</td>
-                                           <td>" . $this->estSer['nombre'] . "</td>
-                                           <td>" . $this->estSer['fechaNacimiento'] . "</td>
-                                           <td>" . $this->estSer['identificacion'] . "</td>
-                                           <td>" . $this->estSer['fechaRegistro'] . "</td>
-                                           <td ><a href='" . $this->baseUrl() . "/estudiantes/info?id=" . $this->estSer['id'] . "'><i class='icon-zoom-in'> </i> Mas..</a></td>
-                                                    </tr>
-                                            ";
+                                          foreach ($this->estSer as $row) {
+                                            echo "
+                                               <tr>
+                                                    <td>" . $row->id . "</td>
+                                                    <td>" . $row->nombre . " " . $row->apellido1 . "</td>
+                                                    <td>" . $row->getEdad() . "</td>
+                                                    <td>" . $row->identificacion . "</td>
+                                                    <td>" . $row->fechaRegistro . "</td>
+                                                    <td ><a href='" . $this->baseUrl() . "/estudiantes/info?id=" . $row->id . "'><i class='icon-zoom-in'> </i> Mas..</a></td>
+                                                </tr>
+                                                ";
+                                        }
                                     }else{
                                         echo "
                                                  <tr>

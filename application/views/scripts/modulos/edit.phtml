@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>IMEC. | Editar Curso</title>
+        <title>IMEC. | Editar Modulo</title>
         <link rel="shortcut icon" href="<?php echo $this->baseUrl() ?>/img/icono.png"/>
         <!-- Styles -->
         <?php echo $this->partial("partials/all-styles.phtml") ?>
@@ -17,42 +17,60 @@
                     <div class="row-fluid">
                         <?php echo $this->partial("partials/menu-lat.phtml") ?>
                         <div class="span9">
-                            <h1>Agrega un nuevo curso !!!</h1>
-                            <p class="text-info">Llena los siguientes campos con los datos del Curso.</p>
+                            <h1>Editar Modulo !!!</h1>
+                            <p class="text-info">Cambia los siguientes campos con los datos actualizados.</p>
+                                                    
+                                
+                                    <form class="form-horizontal" action="" method="POST">
+                                        <fieldset>
+                                            <br><br>
+                                            <div class="control-group">
+                                                <label class="control-label" for="user">Codigo: </label>
+                                                <div class="controls">
+                                                    <input type="text" readonly="" class="input-xlarge" name="codigo" value="<?php echo $this->modulo['codigo']; ?>">
+                                                    <span class="help-inline"></span>
+                                                </div>
+                                            </div>
 
+                                            <div class="control-group">
+                                                <label class="control-label" for="nombreCompleto">Nombre Curso: </label>
+                                                <div class="controls">  
+                                                    <input type="text" placeholder="Nombre" class="input-medium" name="nombre" value="<?php echo $this->modulo['nombre']; ?>">
 
-                            <form class="form-horizontal" action="" method="POST">
-                                <fieldset>
-                                    <br><br>
-                                    <div class="control-group success">
-                                        <label class="control-label" for="user">Codigo: </label>
-									
-                                        <div class="controls">
-                                            <input type="text" readonly="" class="input-xlarge" name="codigo" id="user" value="<?php echo $this->curso['codigo']; ?>">
-                                        </div>
-                                    </div>
-                                                                
-                                    <div class="control-group">
-                                        <label class="control-label" for="nombreCompleto">Nombre Curso: </label>
-                                        <div class="controls">  
-                                            <input type="text" placeholder="Nombre"  name="nombre" class="input-medium" id="nombre" value="<?php echo $this->curso['nombre']; ?>">
+                                                </div>
+                                            </div>	
 
-                                        </div>
-                                    </div>	
-
-                                    <div class="control-group">
-                                        <label class="control-label" for="comentario">Descripcion del Curso: </label>
-                                        <div class="controls">
-                                            <textarea class="input-xlarge"  name="descripcion" id="comentario" rows="3" ><?php echo $this->curso['descripcion']; ?></textarea>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-actions">
-                                        <button type="submit" class="btn btn-primary">Actualizar</button>
-                                    </div>
-                                </fieldset>
-                            </form>
-
+                                            <div class="control-group">
+                                                <label class="control-label" for="comentario">Descripcion del Curso: </label>
+                                                <div class="controls">
+                                                    <textarea class="input-xlarge" name="descripcion" rows="3"><?php echo $this->modulo['descripcion']; ?></textarea>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="curso">Curso al que pertenece: </label>
+                                                <div class="controls">
+                                                    <select class="span5" name="cursos_codigo">
+                                                         <option value="<?php echo $this->cursoSelect['codigo'];?>"><?php echo $this->cursoSelect['nombre'];?></option>      
+                                                         <?php
+                                                            if (count($this->misCursos)) {
+                                                                foreach ($this->misCursos as $row) {
+                                                                    echo "
+                                                                      <option value='" . $row->codigo . "'>" . $row->nombre . "</option>      
+                                                                    ";
+                                                                }
+                                                            }
+                                                         ?> 
+                                                    </select>
+                                                    <span class="help-inline"></span>
+                                                </div>
+                                            </div>
+                                            <div class="form-actions">
+                                                <button type="submit" class="btn btn-primary">Completar Registro</button>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                 
+                          
 
                         </div>
                     </div>

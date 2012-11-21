@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>IMEC. | Eliminar Curso</title>
+        <title>IMEC. | Eliminar Modulo</title>
         <link rel="shortcut icon" href="<?php echo $this->baseUrl() ?>/img/icono.png"/>
         <!-- Styles -->
         <?php echo $this->partial("partials/all-styles.phtml") ?>
@@ -17,7 +17,7 @@
                     <div class="row-fluid">
                         <?php echo $this->partial("partials/menu-lat.phtml") ?>
                         <div class="span9">
-                            <h1>Eliminar Curso</h1><br>
+                            <h1>Eliminar Modulo</h1><br>
                             <div  class="alert alert-error fade in">
                                 <a class="close" data-dismiss="alert">x</a>
                                 <h4 class="alert-heading">Atencion! </h4>
@@ -28,11 +28,11 @@
                                 <fieldset>
                                     <br>
                                     
-                                    <h3>Est&aacute; seguro de querer borrar el curso: 
-                                        <?php echo $this->curso['nombre']; ?> 
+                                    <h3>Est&aacute; seguro de querer borrar el modulo: 
+                                        <?php echo $this->modulo['nombre']; ?> 
                                     </h3>
                                     <div class="form-actions">
-                                        <input type="hidden" name="id" value="<?php echo $this->curso['codigo']; ?>" /> 
+                                        <input type="hidden" name="id" value="<?php echo $this->modulo['codigo']; ?>" /> 
                                         <input type="submit" name="del" class="btn btn-danger" value="Si" />
                                          <input type="submit" name="del" class="btn btn-success" value="No" />
                                         
