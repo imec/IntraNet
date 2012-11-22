@@ -1,233 +1,251 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>IMEC. | Usuarios</title>
-		<link rel="shortcut icon" href="<?php echo $this->baseUrl()?>/img/icono.png"/>
-		<!-- Styles -->
-			<?php echo $this->partial("partials/all-styles.phtml") ?>
-		<!-- Styles -->
-		
-	</head>
-	<body>
-		<div id="encabezado">
-			<?php echo $this->partial("partials/top-bar.phtml") ?>
-		</div>
-		<div id="contenido">
-			<div class="container">
-				<div class="container-fluid">
-				<div class="row-fluid">
-					<?php echo $this->partial("partials/menu-lat.phtml") ?>
-					<div class="span9">
-						<h1>Informaci&oacute;n - <?php echo $this->Estudiante['nombre']." ".$this->Estudiante['apellido1'] ?></h1>
-						<p class="text-info">Selecciona la opcion que deseas consultar.</p>
-						<br>
-						
-						<ul id="miTab">
-							<li ><a href="#" name="#Personal" >Personal</a></li>
-							<li><a href="#" name="#Cursos" >Cursos</a></li>
-							<li ><a href="#" name="#Notas">Notas</a></li>
-							<li ><a href="#" name="#Pagos" >Pagos</a></li>
-						
-						 </ul>
-						<div id="miTabContent">
-							<div id="Personal">
-								<form class="form-horizontal">
-								<fieldset>
-                                                                    <legend>Informaci&oacute;n Personal</legend>
-								 <ul class="thumbnails" style="    margin-left: 473px;    overflow: hidden;    position: absolute;    margin-top: -55px;">
-									<li class="span2">
-										<img src="http://placehold.it/160x120" alt="">
-									 </li>
-									
-								  </ul>
-									<div class="control-group">
-									<label class="control-label" for="input01">Fecha Ingreso: </label>
-									<div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante['fechaRegistro'];?>" class="input-xlarge" id="input01"></div>
-								  </div>
-								  <div class="control-group">
-									<label class="control-label" for="input01">Codigo: </label>
-									<div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante['id'];?>" class="input-small" id="input01"></div>
-								  </div>
-								  <div class="control-group">
-									<label class="control-label" for="input01">Cedula: </label>
-									<div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante['identificacion'];?>" class="input-xlarge" id="input01"></div>
-								  </div>
-								  <div class="control-group">
-									<label class="control-label" for="input01">Genero: </label>
-									<div class="controls">  <input readonly="readonly" type="text" value="<?php if($this->Estudiante['generos_id']==1){echo "Masculino";}else{ echo "Femenino";} ?>" class="input-xlarge" id="input01"></div>
-								  </div>
-								  <div class="control-group">
-									<label class="control-label" for="input01">Edad: </label>
-									<div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante->getEdad();?>" class="input-small" id="input01"></div>
-								  </div>
-								  <div class="control-group">
-									<label class="control-label" for="input01">Correo: </label>
-									<div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante['email'];?>" class="input-xlarge" id="input01"></div>
-								  </div>
-								   <div class="control-group">
-									<label class="control-label" for="input01">Telefonos: </label>
-									<div class="controls">  
-										<input readonly="readonly" type="text" value="2430-4654" class="input-small" id="input01">
-										<input readonly="readonly" type="text" value="70101918" class="input-small" id="input01">
-									</div>
-								  </div>
-								   <div class="control-group">
-									<label class="control-label" for="input01">Direcci�n: </label>
-									<div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante['direccion'];?>" class="input-xlarge" id="input01"></div>
-								  </div>
-								</fieldset>
-							  </form>
-							</div>
-							<div id="Cursos">
-								<div class="">
-									
-									<br>
-									<table class="bordered" >
-										<tr>
-											<th>Curso</th>
-											<th>Fecha Inicio</th>
-											<th>Grupo</th>
-											<th>Estado</th>
-										</tr>
+    <head>
+        <title>IMEC. | Usuarios</title>
+        <link rel="shortcut icon" href="<?php echo $this->baseUrl() ?>/img/icono.png"/>
+        <!-- Styles -->
+        <?php echo $this->partial("partials/all-styles.phtml") ?>
+        <!-- Styles -->
 
-										<tr>
-											<td>Operador en Sistemas Inform�ticos</td>
-											<td>16/8/2011</td>
-											<td><a href="#" rel="tooltip" data-original-title="Profesor: Ismael Artavia">Sabados 8 a 11</a></td>
-											<td>Finalizado</td>
-										</tr>
-										<tr>
-											<td>Mantenimiento y Reparaci�n de Computadoras</td>
-											<td>2/9/2012</td>
-											<td><a href="#" rel="tooltip" title="Profesor: Juan Araya">Sabados 8 a 11</a></td>
-											<td>Cursando</td>
-										</tr>
-									</table>
-									<br>
-									<br><br>
-								</div>
-							</div>
-							<div id="Notas">
-								<div class="">
-									<h4 class="alert-heading">Curso Tecnico en Sistemas Inform�ticos</h4>
-									<br>
-									<table class="bordered" >
-										<tr>
-											<th>Modulo</th>
-											<th>Nota Final</th>
-											<th>Observaciones</th>
-										</tr>
+    </head>
+    <body>
+        <div id="encabezado">
+            <?php echo $this->partial("partials/top-bar.phtml") ?>
+        </div>
+        <div id="contenido">
+            <div class="container">
+                <div class="container-fluid">
+                    <div class="row-fluid">
+                        <?php echo $this->partial("partials/menu-lat.phtml") ?>
+                        <div class="span9">
+                            <h1>Informaci&oacute;n - <?php echo $this->Estudiante['nombre'] . " " . $this->Estudiante['apellido1'] ?></h1>
+                            <p class="text-info">Selecciona la opcion que deseas consultar.</p>
+                            <br>
 
-										<tr class="letraVerde">
-											<td>Windows 7</td>
-											<td>90</td>
-											<td>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1</td>
-										</tr>
-										<tr class="letraVerde">
-											<td>MS Office Word 2010</td>
-											<td>100</td>
-											<td>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1</td>
-										</tr>
-										<tr class="letraVerde">
-											<td>MS Office Excel 2010 (I)</td>
-											<td>75</td>
-											<td>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1</td>
-										</tr>
-										<tr class="letraRoja">
-											<td>MS Office Excel 2010 (II)</td>
-											<td>69</td>
-											<td>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1</td>
-										</tr>
-									</table>
-									<br>
-									<br><br>
-								</div>
-							</div>
-							<div id="Pagos">
-								<div class="">
-									<h4 class="alert-heading">Curso Tecnico en Sistemas Inform�ticos</h4>
-									<br>
-									<table class="bordered" >
-										<tr>
-											<th>#</th>
-											<th>Fecha Establecida</th>
-											<th>Cliente</th>
-											<th>Detalle</th>
-											<th>� Monto Pend</th>
-											<th>Acci�n</th>
-										</tr>
+                            <ul id="miTab">
+                                <li ><a href="#" name="#Personal" >Personal</a></li>
+                                <li><a href="#" name="#Cursos" >Cursos</a></li>
+                                <li ><a href="#" name="#Notas">Notas</a></li>
+                                <li ><a href="#" name="#Pagos" >Pagos</a></li>
 
-										<tr class="letraRoja">
-											<td>456</td>
-											<td>16 May 2013</td>
-											<td>Victor Araya</td>
-											<td>Mensualidad</td>
-											<td>�24000</td>
-											<td ><a href="<?php echo $this->baseUrl()?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
-													
-										</tr>
-										
-										
-										<tr class="letraRoja">
-											<td>457</td>
-											<td>16 Abr 2013</td>
-											<td>Victor Araya</td>
-											<td>Mensualidad</td>
-											<td>�5000</td>
-											<td ><a  href="<?php echo $this->baseUrl()?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
-										</tr>
-										<tr class="letraAmarilla">
-											<td>458</td>
-											<td>16 Abr 2013</td>
-											<td>Victor Araya</td>
-											<td>Mensualidad</td>
-											<td>�5000</td>
-											<td ><a href="<?php echo $this->baseUrl()?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
-										</tr>
-										<tr class="letraAmarilla">
-											<td>459</td>
-											<td>16 Abr 2013</td>
-											<td>Victor Araya</td>
-											<td>Mensualidad</td>
-											<td>�8000</td>
-											<td ><a href="<?php echo $this->baseUrl()?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
-										</tr>
-										<tr class="letraVerde">
-											<td>460</td>
-											<td>16 Abr 2013</td>
-											<td>Victor Araya</td>
-											<td>Mensualidad</td>
-											<td>�0</td>
-											<td ><a href="<?php echo $this->baseUrl()?>/facturar/historial?id=78628173"><i class="icon-check"> </i> Ver Historial</a></td>
-										</tr>
-										<tr class="letraVerde">
-											<td>461</td>
-											<td>16 Abr 2013</td>
-											<td>Victor Araya</td>
-											<td>Mensualidad</td>
-											<td>�0</td>
-											<td ><a href="<?php echo $this->baseUrl()?>/facturar/historial?id=78628173"><i class="icon-check"> </i> Ver Historial</a></td>
-										</tr>
-									</table>
-									<br>
-									<br><br>
-								</div>	
-							</div>
-							</div>
-						</div>
-						
-						<br>
-						
-						
-						
-						
-					</div>
-				</div>
-				</div>
-			</div>
-		</div>
-		<!-- all scripts -->
-			<?php echo $this->partial("partials/all-scripts.phtml") ?>
-		<!-- all scripts -->
-	</body>
+                            </ul>
+                            <div id="miTabContent">
+                                <div id="Personal">
+                                    <form class="form-horizontal">
+                                        <fieldset>
+                                            <legend style="width:80%;" >Informaci&oacute;n Personal</legend>
+                                            <ul class="thumbnails" style="    margin-left: 543px;    overflow: hidden;    position: absolute;    margin-top: -55px;">
+                                                <li class="span4">
+                                                    <img src="<?php echo $this->baseUrl(); ?>/img/<?php echo $this->Foto;?>" alt="">
+                                                </li>
+
+                                            </ul>
+                                            <div class="control-group">
+                                                <label class="control-label" for="input01">Fecha Ingreso: </label>
+                                                <div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante['fechaRegistro']; ?>" class="input-xlarge" id="input01"></div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="input01">Codigo: </label>
+                                                <div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante['id']; ?>" class="input-small" id="input01"></div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="input01">Cedula: </label>
+                                                <div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante['identificacion']; ?>" class="input-xlarge" id="input01"></div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="input01">Genero: </label>
+                                                <div class="controls">  <input readonly="readonly" type="text" value="<?php if ($this->Estudiante['generos_id'] == 1) {
+                            echo "Masculino";
+                        } else {
+                            echo "Femenino";
+                        } ?>" class="input-xlarge" id="input01"></div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="input01">Edad: </label>
+                                                <div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante->getEdad(); ?>" class="input-small" id="input01"></div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="input01">Correo: </label>
+                                                <div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante['email']; ?>" class="input-xlarge" id="input01"></div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="input01">Telefonos: </label>
+                                                <div class="controls">  
+                                                    <?php 
+                                                        foreach ($this->Telefonos as $row) {
+                                                            echo "
+                                                                <input readonly='readonly' type='text' value='" . $row->numeroTelefono . "' class='input-small' >
+                                                            ";
+                                                        }
+                                                    ?>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="input01">Direcci&oacute;n: </label>
+                                                <div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante['direccion']; ?>" class="input-xlarge" id="input01"></div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                                <div id="Cursos">
+                                    <div class="">
+
+                                        <br>
+                                        <table class="bordered" >
+                                            <tr>
+                                                <th>Curso</th>
+                                                <th>Fecha Inicio</th>
+                                                <th>Grupo</th>
+                                                <th>Estado</th>
+                                            </tr>
+                                            <?php
+                                            if (count($this->CursosMatriculados)) {
+                                                foreach ($this->CursosMatriculados as $row2) {
+                                                    
+                                                  echo "
+                                                     <tr>
+                                                          <td>" . $row2->cursos_codigo . "</td>
+                                                          <td></td>
+                                                          <td>" . $row2->grupos_codigo . "</td>
+                                                          <td>" . $row2->estado . "</td>
+                                                     </tr>
+                                                      ";
+                                                  
+                                                  }
+                                              }else{
+                                                  echo "
+                                                           <tr>
+                                                              <td colspan='4'>No ah matriculado ningun Curso</td>
+                                                            </tr>
+                                                      ";
+                                              } 
+                                              ?>   
+                                        </table>
+                                        <br>
+                                        <br><br>
+                                    </div>
+                                </div>
+                                <div id="Notas">
+                                    <div class="">
+                                        <h4 class="alert-heading">Curso Tecnico en Sistemas Inform�ticos</h4>
+                                        <br>
+                                        <table class="bordered" >
+                                            <tr>
+                                                <th>Modulo</th>
+                                                <th>Nota Final</th>
+                                                <th>Observaciones</th>
+                                            </tr>
+
+                                            <tr class="letraVerde">
+                                                <td>Windows 7</td>
+                                                <td>90</td>
+                                                <td>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1</td>
+                                            </tr>
+                                            <tr class="letraVerde">
+                                                <td>MS Office Word 2010</td>
+                                                <td>100</td>
+                                                <td>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1</td>
+                                            </tr>
+                                            <tr class="letraVerde">
+                                                <td>MS Office Excel 2010 (I)</td>
+                                                <td>75</td>
+                                                <td>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1</td>
+                                            </tr>
+                                            <tr class="letraRoja">
+                                                <td>MS Office Excel 2010 (II)</td>
+                                                <td>69</td>
+                                                <td>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1</td>
+                                            </tr>
+                                        </table>
+                                        <br>
+                                        <br><br>
+                                    </div>
+                                </div>
+                                <div id="Pagos">
+                                    <div class="">
+                                        <h4 class="alert-heading">Curso Tecnico en Sistemas Inform�ticos</h4>
+                                        <br>
+                                        <table class="bordered" >
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Fecha Establecida</th>
+                                                <th>Cliente</th>
+                                                <th>Detalle</th>
+                                                <th>� Monto Pend</th>
+                                                <th>Acci�n</th>
+                                            </tr>
+
+                                            <tr class="letraRoja">
+                                                <td>456</td>
+                                                <td>16 May 2013</td>
+                                                <td>Victor Araya</td>
+                                                <td>Mensualidad</td>
+                                                <td>�24000</td>
+                                                <td ><a href="<?php echo $this->baseUrl() ?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
+
+                                            </tr>
+
+
+                                            <tr class="letraRoja">
+                                                <td>457</td>
+                                                <td>16 Abr 2013</td>
+                                                <td>Victor Araya</td>
+                                                <td>Mensualidad</td>
+                                                <td>�5000</td>
+                                                <td ><a  href="<?php echo $this->baseUrl() ?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
+                                            </tr>
+                                            <tr class="letraAmarilla">
+                                                <td>458</td>
+                                                <td>16 Abr 2013</td>
+                                                <td>Victor Araya</td>
+                                                <td>Mensualidad</td>
+                                                <td>�5000</td>
+                                                <td ><a href="<?php echo $this->baseUrl() ?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
+                                            </tr>
+                                            <tr class="letraAmarilla">
+                                                <td>459</td>
+                                                <td>16 Abr 2013</td>
+                                                <td>Victor Araya</td>
+                                                <td>Mensualidad</td>
+                                                <td>�8000</td>
+                                                <td ><a href="<?php echo $this->baseUrl() ?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
+                                            </tr>
+                                            <tr class="letraVerde">
+                                                <td>460</td>
+                                                <td>16 Abr 2013</td>
+                                                <td>Victor Araya</td>
+                                                <td>Mensualidad</td>
+                                                <td>�0</td>
+                                                <td ><a href="<?php echo $this->baseUrl() ?>/facturar/historial?id=78628173"><i class="icon-check"> </i> Ver Historial</a></td>
+                                            </tr>
+                                            <tr class="letraVerde">
+                                                <td>461</td>
+                                                <td>16 Abr 2013</td>
+                                                <td>Victor Araya</td>
+                                                <td>Mensualidad</td>
+                                                <td>�0</td>
+                                                <td ><a href="<?php echo $this->baseUrl() ?>/facturar/historial?id=78628173"><i class="icon-check"> </i> Ver Historial</a></td>
+                                            </tr>
+                                        </table>
+                                        <br>
+                                        <br><br>
+                                    </div>	
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- all scripts -->
+<?php echo $this->partial("partials/all-scripts.phtml") ?>
+    <!-- all scripts -->
+</body>
 </html>

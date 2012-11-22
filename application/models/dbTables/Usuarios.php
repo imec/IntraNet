@@ -12,7 +12,10 @@ class Application_Model_dbTables_Usuarios extends Zend_Db_Table_Abstract {
     }
 
     public function getAll() {
-        return $this->fetchAll();
+        $select = $this->select()->where('tipoUsuarios_id = ?', "1");
+        return $this->fetchAll($select);
+                 
+        //return $this->fetchAll();
     }
 
     public function searchUser($param, $tipo) {
