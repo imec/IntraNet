@@ -18,7 +18,7 @@
 				<div class="row-fluid">
 					<?php echo $this->partial("partials/menu-lat.phtml") ?>
 					<div class="span9">
-						<h1>Información - Victor Araya Jiménez</h1>
+						<h1>Informaci&oacute;n - <?php echo $this->Estudiante['nombre']." ".$this->Estudiante['apellido1'] ?></h1>
 						<p class="text-info">Selecciona la opcion que deseas consultar.</p>
 						<br>
 						
@@ -33,7 +33,7 @@
 							<div id="Personal">
 								<form class="form-horizontal">
 								<fieldset>
-								  <legend>Información Personal</legend>
+                                                                    <legend>Informaci&oacute;n Personal</legend>
 								 <ul class="thumbnails" style="    margin-left: 473px;    overflow: hidden;    position: absolute;    margin-top: -55px;">
 									<li class="span2">
 										<img src="http://placehold.it/160x120" alt="">
@@ -42,27 +42,27 @@
 								  </ul>
 									<div class="control-group">
 									<label class="control-label" for="input01">Fecha Ingreso: </label>
-									<div class="controls">  <input readonly="readonly" type="text" value="15 Julio 2009" class="input-xlarge" id="input01"></div>
+									<div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante['fechaRegistro'];?>" class="input-xlarge" id="input01"></div>
 								  </div>
 								  <div class="control-group">
 									<label class="control-label" for="input01">Codigo: </label>
-									<div class="controls">  <input readonly="readonly" type="text" value="459684" class="input-small" id="input01"></div>
+									<div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante['id'];?>" class="input-small" id="input01"></div>
 								  </div>
 								  <div class="control-group">
 									<label class="control-label" for="input01">Cedula: </label>
-									<div class="controls">  <input readonly="readonly" type="text" value="206860157" class="input-xlarge" id="input01"></div>
+									<div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante['identificacion'];?>" class="input-xlarge" id="input01"></div>
 								  </div>
 								  <div class="control-group">
 									<label class="control-label" for="input01">Genero: </label>
-									<div class="controls">  <input readonly="readonly" type="text" value="Masculino" class="input-xlarge" id="input01"></div>
+									<div class="controls">  <input readonly="readonly" type="text" value="<?php if($this->Estudiante['generos_id']==1){echo "Masculino";}else{ echo "Femenino";} ?>" class="input-xlarge" id="input01"></div>
 								  </div>
 								  <div class="control-group">
 									<label class="control-label" for="input01">Edad: </label>
-									<div class="controls">  <input readonly="readonly" type="text" value="19" class="input-small" id="input01"></div>
+									<div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante->getEdad();?>" class="input-small" id="input01"></div>
 								  </div>
 								  <div class="control-group">
 									<label class="control-label" for="input01">Correo: </label>
-									<div class="controls">  <input readonly="readonly" type="text" value="vic9511@hotmail.com" class="input-xlarge" id="input01"></div>
+									<div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante['email'];?>" class="input-xlarge" id="input01"></div>
 								  </div>
 								   <div class="control-group">
 									<label class="control-label" for="input01">Telefonos: </label>
@@ -72,8 +72,8 @@
 									</div>
 								  </div>
 								   <div class="control-group">
-									<label class="control-label" for="input01">Dirección: </label>
-									<div class="controls">  <input readonly="readonly" type="text" value="50 este tios bar calle loria, Itiquis" class="input-xlarge" id="input01"></div>
+									<label class="control-label" for="input01">Direcciï¿½n: </label>
+									<div class="controls">  <input readonly="readonly" type="text" value="<?php echo $this->Estudiante['direccion'];?>" class="input-xlarge" id="input01"></div>
 								  </div>
 								</fieldset>
 							  </form>
@@ -91,13 +91,13 @@
 										</tr>
 
 										<tr>
-											<td>Operador en Sistemas Informáticos</td>
+											<td>Operador en Sistemas Informï¿½ticos</td>
 											<td>16/8/2011</td>
 											<td><a href="#" rel="tooltip" data-original-title="Profesor: Ismael Artavia">Sabados 8 a 11</a></td>
 											<td>Finalizado</td>
 										</tr>
 										<tr>
-											<td>Mantenimiento y Reparación de Computadoras</td>
+											<td>Mantenimiento y Reparaciï¿½n de Computadoras</td>
 											<td>2/9/2012</td>
 											<td><a href="#" rel="tooltip" title="Profesor: Juan Araya">Sabados 8 a 11</a></td>
 											<td>Cursando</td>
@@ -109,7 +109,7 @@
 							</div>
 							<div id="Notas">
 								<div class="">
-									<h4 class="alert-heading">Curso Tecnico en Sistemas Informáticos</h4>
+									<h4 class="alert-heading">Curso Tecnico en Sistemas Informï¿½ticos</h4>
 									<br>
 									<table class="bordered" >
 										<tr>
@@ -145,7 +145,7 @@
 							</div>
 							<div id="Pagos">
 								<div class="">
-									<h4 class="alert-heading">Curso Tecnico en Sistemas Informáticos</h4>
+									<h4 class="alert-heading">Curso Tecnico en Sistemas Informï¿½ticos</h4>
 									<br>
 									<table class="bordered" >
 										<tr>
@@ -153,8 +153,8 @@
 											<th>Fecha Establecida</th>
 											<th>Cliente</th>
 											<th>Detalle</th>
-											<th>¢ Monto Pend</th>
-											<th>Acción</th>
+											<th>ï¿½ Monto Pend</th>
+											<th>Acciï¿½n</th>
 										</tr>
 
 										<tr class="letraRoja">
@@ -162,7 +162,7 @@
 											<td>16 May 2013</td>
 											<td>Victor Araya</td>
 											<td>Mensualidad</td>
-											<td>¢24000</td>
+											<td>ï¿½24000</td>
 											<td ><a href="<?php echo $this->baseUrl()?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
 													
 										</tr>
@@ -173,7 +173,7 @@
 											<td>16 Abr 2013</td>
 											<td>Victor Araya</td>
 											<td>Mensualidad</td>
-											<td>¢5000</td>
+											<td>ï¿½5000</td>
 											<td ><a  href="<?php echo $this->baseUrl()?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
 										</tr>
 										<tr class="letraAmarilla">
@@ -181,7 +181,7 @@
 											<td>16 Abr 2013</td>
 											<td>Victor Araya</td>
 											<td>Mensualidad</td>
-											<td>¢5000</td>
+											<td>ï¿½5000</td>
 											<td ><a href="<?php echo $this->baseUrl()?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
 										</tr>
 										<tr class="letraAmarilla">
@@ -189,7 +189,7 @@
 											<td>16 Abr 2013</td>
 											<td>Victor Araya</td>
 											<td>Mensualidad</td>
-											<td>¢8000</td>
+											<td>ï¿½8000</td>
 											<td ><a href="<?php echo $this->baseUrl()?>/facturar/facturar?id=78628173"><i class="icon-check"> </i> Pagar</a></td>
 										</tr>
 										<tr class="letraVerde">
@@ -197,7 +197,7 @@
 											<td>16 Abr 2013</td>
 											<td>Victor Araya</td>
 											<td>Mensualidad</td>
-											<td>¢0</td>
+											<td>ï¿½0</td>
 											<td ><a href="<?php echo $this->baseUrl()?>/facturar/historial?id=78628173"><i class="icon-check"> </i> Ver Historial</a></td>
 										</tr>
 										<tr class="letraVerde">
@@ -205,7 +205,7 @@
 											<td>16 Abr 2013</td>
 											<td>Victor Araya</td>
 											<td>Mensualidad</td>
-											<td>¢0</td>
+											<td>ï¿½0</td>
 											<td ><a href="<?php echo $this->baseUrl()?>/facturar/historial?id=78628173"><i class="icon-check"> </i> Ver Historial</a></td>
 										</tr>
 									</table>

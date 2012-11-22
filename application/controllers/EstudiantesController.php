@@ -7,10 +7,11 @@ class EstudiantesController extends Zend_Controller_Action {
     }
 
     public function infoAction() {
-        if(empty($_GET) || $_GET['id']== "" || $_GET['tipo']=="") {
+        if(empty($_GET) || $_GET['id']== "" ) {
             $this->_redirect('/estudiantes/search/');
         }else{
-            
+            $model = new Application_Model_dbTables_Usuarios(); //crea el modelo
+            $this->view->Estudiante = $model->getUsuario($_GET['id']);
         } 
     }
 

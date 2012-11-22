@@ -18,7 +18,7 @@ class FacturarController extends Zend_Controller_Action
     }
 	public function detalleAction()
     {
-        if(empty($_GET) || $_GET['id']== "" || $_GET['tipo']=="") {
+        if(empty($_GET) || $_GET['id']== "") {
              $this->_redirect('/facturar/search/');   
         }else{
             

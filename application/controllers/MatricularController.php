@@ -10,7 +10,7 @@ class MatricularController extends Zend_Controller_Action
 
     public function matricularAction()
     {
-        if(empty($_GET) || $_GET['id']== "" || $_GET['tipo']=="") {
+        if(empty($_GET) || $_GET['id']== "" ) {
             $this->_redirect('/matricular/search/');
         }else{
             
