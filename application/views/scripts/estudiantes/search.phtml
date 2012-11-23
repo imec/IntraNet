@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>IMEC. | Usuarios</title>
+        <title>IMEC. | Estudiantes</title>
         <link rel="shortcut icon" href="<?php echo $this->baseUrl() ?>/img/icono.png"/>
         <!-- Styles -->
         <?php echo $this->partial("partials/all-styles.phtml") ?>
@@ -18,13 +18,13 @@
                     <div class="row-fluid">
                         <?php echo $this->partial("partials/menu-lat.phtml") ?>
                         <div class="span9">
-                            <h1>Usuarios</h1>
-                            <p class="text-info">Busca el Usuario que deseas y realiza el tramite correspondiente.</p>
+                            <h1>Estudiantes</h1>
+                            <p class="text-info">Busca el Estudiante que deseas y realiza el tramite correspondiente.</p>
 
                             <div  class="alert alert-block fade in">
                                 <a class="close" data-dismiss="alert">x</a>
                                 <h4 class="alert-heading">Recuerda! </h4>
-                                Puedes filtar la informaci&oacute;n por el tipo de Usuario y realizar la busqueda mas especifica.
+                                Puedes filtar la informaci&oacute;n por el tipo de Busqueda y realizar la busqueda mas especifica.
                             </div>
                             <form method="get" class="form-horizontal">
                                 <select name="tipo" class="span3"  id="select01">
@@ -46,6 +46,7 @@
                                 <tr>
                                     <th>Cod.</th>
                                     <th>Nombre</th>
+                                    <th>C&eacute;dula</th>
                                     <th>Edad</th>
                                     <th>Telefono</th>
                                     <th>Fecha Ingr.</th>
@@ -58,9 +59,19 @@
                                                  <tr>
                                                     <td>" . $row->id . "</td>
                                                     <td>" . $row->nombre . " " . $row->apellido1 . "</td>
-                                                    <td>" . $row->getEdad() . "</td>
                                                     <td>" . $row->identificacion . "</td>
-                                                    <td>" . $row->fechaRegistro . "</td>
+                                                    <td>" . $row->getEdad() . "</td>
+                                                    <td>" ; 
+                                                         if (count($this->telefonos_model->getTelefonos($row->id))) {
+                                                             foreach ($this->telefonos_model->getTelefonos($row->id) as $tel) 
+                                                                 echo $tel->numeroTelefono;
+                                                         }else{
+                                                             foreach ($this->telefonos_model->getTelefonos($row->id) as $tel) 
+                                                                  echo "* " . $tel->numeroTelefono . " ";
+                                                         }
+                                                                 
+                                              echo "</td>
+                                                    <td>" . $row->getFechaRegistro() . "</td>
                                                     <td ><a href='" . $this->baseUrl() . "/estudiantes/info?id=" . $row->id . "'><i class='icon-zoom-in'> </i> Mas..</a></td>
                                                 </tr>
                                             ";
@@ -72,9 +83,18 @@
                                                <tr>
                                                     <td>" . $row->id . "</td>
                                                     <td>" . $row->nombre . " " . $row->apellido1 . "</td>
-                                                    <td>" . $row->getEdad() . "</td>
                                                     <td>" . $row->identificacion . "</td>
-                                                    <td>" . $row->fechaRegistro . "</td>
+                                                    <td>" . $row->getEdad() . "</td>
+                                                    <td>" ; 
+                                                         if (count($this->telefonos_model->getTelefonos($row->id)) == 1 ) {
+                                                             foreach ($this->telefonos_model->getTelefonos($row->id) as $tel) 
+                                                                 echo $tel->numeroTelefono;
+                                                         }else{
+                                                             foreach ($this->telefonos_model->getTelefonos($row->id) as $tel) 
+                                                                 echo "* " . $tel->numeroTelefono . " ";
+                                                         }        
+                                              echo "</td>    
+                                                    <td>" . $row->getFechaRegistro() . "</td>
                                                     <td ><a href='" . $this->baseUrl() . "/estudiantes/info?id=" . $row->id . "'><i class='icon-zoom-in'> </i> Mas..</a></td>
                                                 </tr>
                                                 ";
@@ -82,7 +102,7 @@
                                     }else{
                                         echo "
                                                  <tr>
-                                                    <td colspan='6'>No se encontraron registros</td>
+                                                    <td colspan='7'>No se encontraron registros</td>
                                                   </tr>
                                             ";
                                     }    

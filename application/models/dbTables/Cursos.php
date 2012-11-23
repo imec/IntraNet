@@ -5,7 +5,11 @@ class Application_Model_dbTables_Cursos extends Zend_Db_Table_Abstract {
     protected $_name = 'cursos';
     protected $_primary = 'codigo';
  
-    
+    public function getNombreCurso($id){
+        $row = $this->fetchRow($this->select()->where('codigo = ?', $id));
+	return (is_null($row)) ? array() : $row->nombre;
+    }
+
     public function getAll() {
         return $this->fetchAll();
     }

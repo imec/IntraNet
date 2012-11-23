@@ -100,14 +100,14 @@
                                             </tr>
                                             <?php
                                             if (count($this->CursosMatriculados)) {
-                                                foreach ($this->CursosMatriculados as $row2) {
+                                                foreach ($this->CursosMatriculados as $row) {
                                                     
                                                   echo "
                                                      <tr>
-                                                          <td>" . $row2->cursos_codigo . "</td>
-                                                          <td></td>
-                                                          <td>" . $row2->grupos_codigo . "</td>
-                                                          <td>" . $row2->estado . "</td>
+                                                         <td>" . $this->cursos_model->getNombreCurso($row->cursos_codigo) . "</td>
+                                                         <td>" . $this->grupos_model->getFechaInicio($row->grupos_codigo) . "</td>
+                                                         <td>" . $row->grupos_codigo . "</td>
+                                                         <td>" . $row->estado . "</td>
                                                      </tr>
                                                       ";
                                                   

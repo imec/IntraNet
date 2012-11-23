@@ -25,5 +25,11 @@ class Application_Model_Usuario extends Zend_Db_Table_Row_Abstract{
         } 
         return $calc_edad;
     }
+    public function  getFechaRegistro() {
+       
+        $fecha=date("D d M Y",strtotime($this->fechaNacimiento));
+        
+        return $fecha;
+    }
     
 }    

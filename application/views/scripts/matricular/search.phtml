@@ -44,9 +44,11 @@
                                                     <tr>
                                                         <th>Cod.</th>
                                                         <th>Nombre</th>
+                                                        <th>C&eacute;dula</th>
                                                         <th>Edad</th>
                                                         <th>Telefono</th>
-                                                        <th>Acci&oacute;n</th>
+                                                        <th>Fecha Ingr.</th>
+                                                        <th>Inspeccionar</th>
                                                     </tr>
                                                     <?php
                                                     if (count($this->miEstudiante)) {
@@ -55,9 +57,20 @@
                                                                      <tr>
                                                                         <td>" . $row->id . "</td>
                                                                         <td>" . $row->nombre . " " . $row->apellido1 . "</td>
-                                                                        <td>" . $row->getEdad() . "</td>
                                                                         <td>" . $row->identificacion . "</td>
-                                                                        <td ><a href='" . $this->baseUrl() . "/matricular/matricular?id=" . $row->id . "'><i class='icon-pencil'> </i> Matricular..</a></td>
+                                                                        <td>" . $row->getEdad() . "</td>
+                                                                        <td>" ; 
+                                                                             if (count($this->telefonos_model->getTelefonos($row->id))) {
+                                                                                 foreach ($this->telefonos_model->getTelefonos($row->id) as $tel) 
+                                                                                     echo $tel->numeroTelefono;
+                                                                             }else{
+                                                                                 foreach ($this->telefonos_model->getTelefonos($row->id) as $tel) 
+                                                                                      echo "* " . $tel->numeroTelefono . " ";
+                                                                             }
+
+                                                                  echo "</td>
+                                                                        <td>" . $row->getFechaRegistro() . "</td>
+                                                                        <td ><a href='" . $this->baseUrl() . "/estudiantes/info?id=" . $row->id . "'><i class='icon-zoom-in'> </i> Mas..</a></td>
                                                                     </tr>
                                                                 ";
                                                         } 
@@ -68,16 +81,26 @@
                                                                    <tr>
                                                                         <td>" . $row->id . "</td>
                                                                         <td>" . $row->nombre . " " . $row->apellido1 . "</td>
-                                                                        <td>" . $row->getEdad() . "</td>
                                                                         <td>" . $row->identificacion . "</td>
-                                                                        <td ><a href='" . $this->baseUrl() . "/matricular/matricular?id=" . $row->id . "'><i class='icon-pencil'> </i> Matricular..</a></td>
+                                                                        <td>" . $row->getEdad() . "</td>
+                                                                        <td>" ; 
+                                                                             if (count($this->telefonos_model->getTelefonos($row->id)) == 1 ) {
+                                                                                 foreach ($this->telefonos_model->getTelefonos($row->id) as $tel) 
+                                                                                     echo $tel->numeroTelefono;
+                                                                             }else{
+                                                                                 foreach ($this->telefonos_model->getTelefonos($row->id) as $tel) 
+                                                                                     echo "* " . $tel->numeroTelefono . " ";
+                                                                             }        
+                                                                  echo "</td>    
+                                                                        <td>" . $row->getFechaRegistro() . "</td>
+                                                                        <td ><a href='" . $this->baseUrl() . "/estudiantes/info?id=" . $row->id . "'><i class='icon-zoom-in'> </i> Mas..</a></td>
                                                                     </tr>
                                                                     ";
                                                             }
                                                         }else{
                                                             echo "
                                                                      <tr>
-                                                                        <td colspan='6'>No se encontraron registros</td>
+                                                                        <td colspan='7'>No se encontraron registros</td>
                                                                       </tr>
                                                                 ";
                                                         }    
@@ -88,10 +111,8 @@
 						
 						
 					</div>
-					
-					
-				</div>
-				</div>
+                                    </div>
+                            </div>
 			</div>
 		</div>
 		<!-- all scripts -->
