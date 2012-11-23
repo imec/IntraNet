@@ -126,40 +126,60 @@
                                     </div>
                                 </div>
                                 <div id="Notas">
-                                    <div class="">
-                                        <h4 class="alert-heading">Curso Tecnico en Sistemas Inform�ticos</h4>
-                                        <br>
-                                        <table class="bordered" >
-                                            <tr>
-                                                <th>Modulo</th>
-                                                <th>Nota Final</th>
-                                                <th>Observaciones</th>
-                                            </tr>
+                                     <?php
+                                        if (count($this->CursosMatriculados)) {
+                                            foreach ($this->CursosMatriculados as $row) {
 
-                                            <tr class="letraVerde">
-                                                <td>Windows 7</td>
-                                                <td>90</td>
-                                                <td>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1</td>
-                                            </tr>
-                                            <tr class="letraVerde">
-                                                <td>MS Office Word 2010</td>
-                                                <td>100</td>
-                                                <td>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1</td>
-                                            </tr>
-                                            <tr class="letraVerde">
-                                                <td>MS Office Excel 2010 (I)</td>
-                                                <td>75</td>
-                                                <td>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1</td>
-                                            </tr>
-                                            <tr class="letraRoja">
-                                                <td>MS Office Excel 2010 (II)</td>
-                                                <td>69</td>
-                                                <td>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1</td>
-                                            </tr>
-                                        </table>
-                                        <br>
-                                        <br><br>
-                                    </div>
+                                              echo '
+                                                <div class="">
+                                                    <h4 class="alert-heading">' . $this->cursos_model->getNombreCurso($row->cursos_codigo) . '</h4>
+                                                    <br>
+                                                    <table class="bordered" >
+                                                        <tr>
+                                                            <th>Modulo</th>
+                                                            <th>Nota Final</th>
+                                                            <th>Observaciones</th>
+                                                        </tr>
+                                                        ';
+                                                        
+                                                        $notas = $this->notas_model->getMisNotas($this->Estudiante['id'], $row->cursos_codigo);
+                                                        if (count($notas)) {
+                                                             foreach ($notas as $row2) {
+                                                                 echo"
+                                                                      <tr class='"; if($row2->nota>=70){echo"letraVerde";}else{echo"letraRoja";}  echo " '>
+                                                                            <td>" . $row2->modulos_codigo . "</td>
+                                                                            <td>" . $row2->nota . "</td>
+                                                                            <td>" . $row2->observaciones . "</td>
+                                                                        </tr>
+                                                                ";
+                                                             }
+                                                        }else{
+                                                            echo"
+                                                              <tr class='letraRoja'>
+                                                                    <td colspan='3'>No hay Notas</td>
+                                                              </tr>  
+                                                                ";
+                                                        }
+                                              echo '
+                                                       
+                                                        
+                                                    </table>
+                                                    <br>
+                                                    <br><br>
+                                                </div>
+                                                  ';
+
+                                              }
+                                          }else{
+                                              echo '
+                                                <div class="">
+                                                    <h4 class="alert-heading">NO has matriculado ningun curso</h4>
+                                                    <br><br>
+                                                </div>
+                                                  ';
+                                          } 
+                                    ?> 
+                                    
                                 </div>
                                 <div id="Pagos">
                                     <div class="">

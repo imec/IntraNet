@@ -39,6 +39,14 @@ class EstudiantesController extends Zend_Controller_Action {
                         $this->view->CursosMatriculados = $modelCursos->getCursosMatriculados($_GET['id']);
                         $this->view->cursos_model = new Application_Model_dbTables_Cursos(); 
                         $this->view->grupos_model = new Application_Model_dbTables_Grupos();
+            
+                // TAB NOTAS *******************************
+                    //Obtiene informacion de Cursos Matriculados (tab cursos -> CursosMatriculados)  
+                    //notas
+                        $this->view->notas_model = new Application_Model_dbTables_Misnotas(); 
+                            
+                        
+                       
             }                
         }
     }
@@ -47,7 +55,7 @@ class EstudiantesController extends Zend_Controller_Action {
 
         if (empty($_GET) || $_GET['id'] == "" || $_GET['tipo'] == "") {
             $model = new Application_Model_dbTables_Usuarios();
-            $this->view->miEstudiante = $model->getAll();
+            $this->view->miEstudiante = $model->getAllStudents();
             $this->view->telefonos_model = new Application_Model_dbTables_Telefonos();
         } else {
             $param = $_GET['id']; //obtiene el parametro

@@ -18,12 +18,16 @@ class Application_Model_dbTables_Usuarios extends Zend_Db_Table_Abstract {
         
         return (is_null($row)) ? array() : $row;
     }
-
+        public function getAllStudents() {
+               $select = $this->select()->where('tipoUsuarios_id = ?', "1");
+               return $this->fetchAll($select);
+        }
+            
     public function getAll() {
-        $select = $this->select()->where('tipoUsuarios_id = ?', "1");
-        return $this->fetchAll($select);
+        //$select = $this->select()->where('tipoUsuarios_id = ?', "1");
+       //return $this->fetchAll($select);
                  
-        //return $this->fetchAll();
+       return $this->fetchAll();
     }
 
     public function searchEstudiante($param, $tipo) {
@@ -63,6 +67,28 @@ class Application_Model_dbTables_Usuarios extends Zend_Db_Table_Abstract {
             }
         }
     }
+    
+
+        
+    public function save($data) {
+        
+//        $errors = array();
+//        
+//        if($data['nombre'] == "")
+//            $errors[] = "nombre"; 
+//
+//        
+//        if(count($errors) > 0) {
+//            return $errors;
+//        } else {
+//            $this->insert($data);
+//            return array();
+//        }
+      
+    }
+        
+        
+  
  
     
     

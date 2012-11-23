@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>IMEC. | Usuarios</title>
+        <link rel="shortcut icon" href="<?php echo $this->baseUrl() ?>/img/icono.png"/>
+        <!-- Styles -->
+        <?php echo $this->partial("partials/all-styles.phtml") ?>
+        <!-- Styles -->
+
+    </head>
+    <body>
+        <div id="encabezado">
+            <?php echo $this->partial("partials/top-bar.phtml") ?>
+        </div>
+        <div id="contenido">
+            <div class="container">
+                <div class="container-fluid">
+                    <div class="row-fluid">
+                        <?php echo $this->partial("partials/menu-lat.phtml") ?>
+                        <div class="span9">
+                            <h1>Usuarios IMEC</h1>
+                            <p class="text-info">Profesores, Administrativos, Estudiantes, Vendedores, Gerencia.</p>
+                             <br>
+                            <a href="add" type="button" class="btn btn-success">Agregar nuevo Usuario</a>
+                             <br><br>       
+                            <form method="get" class="form-horizontal">
+                                <select name="tipo" class="span3"  id="select01">
+                                    <option value="1">Nombre</option>
+                                    <option value="2">Cedula</option>
+                                    <option value="3">Usuario</option>
+                                </select>
+
+
+
+                                <input type="text" name="id" class="span4" placeholder="Digite el termino de busqueda"/>
+
+                                <button type="submit" class="btn btn-primary">Filtrar</button>
+
+                            </form>
+
+
+                            <table class="bordered" >
+                                <tr>
+                                    <th>Cod.</th>
+                                    <th>Nombre</th>
+                                    <th>C&eacute;dula</th>
+                                    <th>Edad</th>
+                                    <th>Telefono</th>
+                                    <th>Fecha Ingr.</th>
+                             
+                                </tr>
+                                <?php
+                                if (count($this->miEstudiante)) {
+                                    foreach ($this->miEstudiante as $row) {
+                                        echo "
+                                                 <tr>
+                                                    <td>" . $row->id . "</td>
+                                                    <td>" . $row->nombre . " " . $row->apellido1 . "</td>
+                                                    <td>" . $row->identificacion . "</td>
+                                                    <td>" . $row->getEdad() . "</td>
+                                                    <td>" ; 
+                                                         if (count($this->telefonos_model->getTelefonos($row->id))) {
+                                                             foreach ($this->telefonos_model->getTelefonos($row->id) as $tel) 
+                                                                 echo $tel->numeroTelefono;
+                                                         }else{
+                                                             foreach ($this->telefonos_model->getTelefonos($row->id) as $tel) 
+                                                                  echo "* " . $tel->numeroTelefono . " ";
+                                                         }
+                                                                 
+                                              echo "</td>
+                                                    <td>" . $row->getFechaRegistro() . "</td>
+                                                  </tr>
+                                            ";
+                                    } 
+                                } else {
+                                    if (count($this->estSer)) {
+                                          foreach ($this->estSer as $row) {
+                                            echo "
+                                               <tr>
+                                                    <td>" . $row->id . "</td>
+                                                    <td>" . $row->nombre . " " . $row->apellido1 . "</td>
+                                                    <td>" . $row->identificacion . "</td>
+                                                    <td>" . $row->getEdad() . "</td>
+                                                    <td>" ; 
+                                                         if (count($this->telefonos_model->getTelefonos($row->id)) == 1 ) {
+                                                             foreach ($this->telefonos_model->getTelefonos($row->id) as $tel) 
+                                                                 echo $tel->numeroTelefono;
+                                                         }else{
+                                                             foreach ($this->telefonos_model->getTelefonos($row->id) as $tel) 
+                                                                 echo "* " . $tel->numeroTelefono . " ";
+                                                         }        
+                                              echo "</td>    
+                                                    <td>" . $row->getFechaRegistro() . "</td>
+                                                    
+                                                </tr>
+                                                ";
+                                        }
+                                    }else{
+                                        echo "
+                                                 <tr>
+                                                    <td colspan='6'>No se encontraron registros</td>
+                                                  </tr>
+                                            ";
+                                    }    
+                                }
+                                ?>   
+                            </table>
+                            <br><br><br><br>   
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- all scripts -->
+        <?php echo $this->partial("partials/all-scripts.phtml") ?>
+        <!-- all scripts -->
+    </body>
+</html>

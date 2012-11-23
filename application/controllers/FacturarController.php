@@ -32,7 +32,7 @@ class FacturarController extends Zend_Controller_Action
     {
         if (empty($_GET) || $_GET['id'] == "" || $_GET['tipo'] == "") {
             $model = new Application_Model_dbTables_Usuarios();
-            $this->view->miEstudiante = $model->getAll();
+            $this->view->miEstudiante = $model->getAllStudents();
             $this->view->telefonos_model = new Application_Model_dbTables_Telefonos();
         } else {
             $param = $_GET['id']; //obtiene el parametro

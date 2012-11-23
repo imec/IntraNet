@@ -21,10 +21,10 @@ class CursosController extends Zend_Controller_Action
             $model = new Application_Model_dbTables_Cursos();
             $errors = $model->save($_POST);
             if(count($errors) > 0) {
-            $this->view->errors = $errors;
-            $this->view->curso = $_POST;
-            $this->view->post=true;
-        } else {
+                $this->view->errors = $errors;
+                $this->view->curso = $_POST;
+                $this->view->post=true;
+            } else {
                 $this->_redirect('/cursos/');
             }   
         }
