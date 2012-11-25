@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>IMEC. | Busqueda</title>
+            <title>IMEC. | Facturaci&oacute;n</title>
 		<link rel="shortcut icon" href="<?php echo $this->baseUrl()?>/img/icono.png"/>
 		<!-- Styles -->
 			<?php echo $this->partial("partials/all-styles.phtml") ?>
@@ -17,14 +17,10 @@
 				<div class="row-fluid">
 					<?php echo $this->partial("partials/menu-lat.phtml") ?>
 					<div class="span9">
-						<h1>Matricular Nuevo Curso.</h1>
-						<p class="text-info">Busca el Usuario deseado y realiaza el preoceso de Matricula respectivo.</p>
-						<div class="alert alert-block fade in">
-						  <a class="close" data-dismiss="alert">x</a>
-                                                  <h4 class="alert-heading">Atenci&oacute;n!</h4>
-						  Si el Estudiante no se encuentra registrado en la base de datos, por favor sigue <a href="<?php echo $this->baseUrl()?>/usuarios/add">este enlace</a>
-						</div>
-					
+                                            <h1>Buscar Estudiante !!!</h1>
+                                            <p class="text-info">Busca el estudiante deseado y realiaza el tramite correspondiente.</p>
+						<br>
+						
 						<form method="get" class="form-horizontal">
                                                     <select name="tipo" class="span3"  id="select01">
                                                         <option value="1">Nombre</option>
@@ -35,11 +31,12 @@
 
 
                                                     <input type="text" name="id" class="span4" placeholder="Digite el termino de busqueda"/>
+                                                    <input type="hidden" name="next" value="<?php echo $this->next;?>" />
 
                                                     <button type="submit" class="btn btn-primary">Filtrar</button>
 
-                                                </form>
-                                                    
+                                                </form> 
+						
 						<table class="bordered" >
                                                     <tr>
                                                         <th>Cod.</th>
@@ -48,7 +45,7 @@
                                                         <th>Edad</th>
                                                         <th>Telefono</th>
                                                         <th>Fecha Ingr.</th>
-                                                        <th>Inspeccionar</th>
+                                                        <th>Acci&oacute;n</th>
                                                     </tr>
                                                     <?php
                                                     if (count($this->miEstudiante)) {
@@ -70,8 +67,30 @@
 
                                                                   echo "</td>
                                                                         <td>" . $row->getFechaRegistro() . "</td>
-                                                                        <td ><a href='" . $this->baseUrl() . "/estudiantes/info?id=" . $row->id . "'><i class='icon-zoom-in'> </i> Mas..</a></td>
-                                                                    </tr>
+                                                                        ";
+                                                                        if($this->next == "matricular"){
+                                                                            echo"
+                                                                                <td > <a href='" . $this->baseUrl() . "/matricular/matricular?id=" . $row->id . "'><i class='icon-th-list'> </i> Matricular </a></td>
+                                                                             ";
+                                                                        }else{
+                                                                            if($this->next == "facturar"){
+                                                                            echo"
+                                                                                 <td ><a href='" . $this->baseUrl() . "/facturar/detalle?id=" . $row->id . "'><i class='icon-folder-open'> </i> Facturas </a></td>
+                                                                             ";
+                                                                            }else{
+                                                                                if($this->next == "consultar"){
+                                                                                    echo"
+                                                                                            <td ><a href='" . $this->baseUrl() . "/estudiantes/info?id=" . $row->id . "'><i class='icon-zoom-in'> </i> Mas..</a></td>
+                                                                                        ";
+                                                                                }else{
+                                                                                    $a = $this->baseUrl();
+                                                                                    header ("Location: $a/");
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        echo"
+                                                                       
+                                                                        </tr>
                                                                 ";
                                                         } 
                                                     } else {
@@ -93,7 +112,28 @@
                                                                              }        
                                                                   echo "</td>    
                                                                         <td>" . $row->getFechaRegistro() . "</td>
-                                                                        <td ><a href='" . $this->baseUrl() . "/estudiantes/info?id=" . $row->id . "'><i class='icon-zoom-in'> </i> Mas..</a></td>
+                                                                        ";
+                                                                        if($this->next == "matricular"){
+                                                                            echo"
+                                                                                <td > <a href='" . $this->baseUrl() . "/matricular/matricular?id=" . $row->id . "'><i class='icon-th-list'> </i> Matricular </a></td>
+                                                                             ";
+                                                                        }else{
+                                                                            if($this->next == "facturar"){
+                                                                            echo"
+                                                                                 <td ><a href='" . $this->baseUrl() . "/facturar/detalle?id=" . $row->id . "'><i class='icon-folder-open'> </i> Facturas </a></td>
+                                                                             ";
+                                                                            }else{
+                                                                                if($this->next == "consultar"){
+                                                                                    echo"
+                                                                                            <td ><a href='" . $this->baseUrl() . "/estudiantes/info?id=" . $row->id . "'><i class='icon-zoom-in'> </i> Mas..</a></td>
+                                                                                        ";
+                                                                                }else{
+                                                                                    $a = $this->baseUrl();
+                                                                                    header ("Location: $a/");
+                                                                                }
+                                                                            }
+                                                                        }
+                                                                        echo"
                                                                     </tr>
                                                                     ";
                                                             }
@@ -107,12 +147,15 @@
                                                     }
                                                     ?>   
                                                 </table>
-						
+                                                
+                                                
 						
 						
 					</div>
-                                    </div>
-                            </div>
+					
+					
+				</div>
+				</div>
 			</div>
 		</div>
 		<!-- all scripts -->
